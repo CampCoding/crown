@@ -8,7 +8,7 @@ import star from "public/images/star.png";
 import videoframe from "public/images/video-frame.png";
 import YoutubeEmbed from "@/components/youtube/YoutubeEmbed";
 
-import LightRays from "@/components/containers/LightRays";
+
 import LightPillar from "../../LightPillar";
 import NetworkGrid from "../NetworkGrid";
 

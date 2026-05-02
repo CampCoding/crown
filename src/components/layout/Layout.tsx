@@ -19,7 +19,7 @@ import ScrollProgressBtn from "./ScrollProgressBtn";
 import CustomCursor from "./CustomCursor";
 import SplitType from "split-type";
 import dynamic from "next/dynamic";
-import SplashCursor from "../SplashCursor";
+const SplashCursor = dynamic(() => import("../SplashCursor"), { ssr: false });
 import NetworkGrid from "./NetworkGrid";
 import FloatingSocials from "./FloatingSocials";
 const LightRays = dynamic(() => import("../containers/LightRays"), { ssr: false });

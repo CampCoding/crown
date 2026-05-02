@@ -55,7 +55,7 @@ const OurServices = () => {
                     </span>{" "}
                     <span className="text-primary">Ecosystem</span>
                   </h2>
-                  <p className="gallery-subtitle text-slate-400">Explore the digital landscape we've built for our clients.</p>
+                  <p className="gallery-subtitle text-slate-400">Explore the digital landscape we&apos;ve built for our clients.</p>
                 </div>
               </div>
             </div>

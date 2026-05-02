@@ -40,7 +40,7 @@ const ContactPremium = () => {
               
               <p className="text-slate-400 fs-5 mb-5 max-w-500">
                 Get in touch with our team for any questions about our digital ecosystem. 
-                We're here to help you scale your brand with precision.
+                We&apos;re here to help you scale your brand with precision.
               </p>
 
               <div className="feature-list d-grid gap-4 mb-5">

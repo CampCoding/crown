@@ -124,7 +124,7 @@ const HomeTestimonialThree = () => {
                       <div className="col-12 col-lg-7 offset-lg-1 text-center text-lg-start mt-4 mt-lg-0">
                         <div className="testimonial-v2__content">
                           <h4 className="fs-3 fw-500 text-slate-200 leading-relaxed italic mb-5">
-                            "{testi.content}"
+                            &quot;{testi.content}&quot;
                           </h4>
                           <div className="author-info">
                             <h5 className="text-white fw-900 text-uppercase ls-1 mb-1">{testi.name}</h5>

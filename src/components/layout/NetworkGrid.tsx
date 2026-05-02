@@ -1,8 +1,15 @@
 import React from "react";
 
-const NetworkGrid = () => {
+interface NetworkGridProps {
+  opacity?: number;
+}
+
+const NetworkGrid = ({ opacity = 1 }: NetworkGridProps) => {
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none">
+    <div 
+      className="absolute inset-0 z-0 pointer-events-none" 
+      style={{ opacity }}
+    >
       {/* Horizontal "Network" Lines */}
       <div className="flex flex-col justify-between h-full w-full py-10 opacity-20">
         {[...Array(15)].map((_, i) => (

@@ -25,7 +25,7 @@ export default function AgencyBlogBanner() {
 
         {/* Smaller, concise description */}
         <p className="text-white/70 text-sm md:text-base max-w-2xl leading-relaxed mb-8 font-light">
-          From algorithmic optimization to high-conversion storytelling. Discover how we helped 50+ brands achieve a 300% ROAS increase using our proprietary "Momentum" framework.
+          From algorithmic optimization to high-conversion storytelling. Discover how we helped 50+ brands achieve a 300% ROAS increase using our proprietary &quot;Momentum&quot; framework.
         </p>
         {/* 3. Minimalist Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">

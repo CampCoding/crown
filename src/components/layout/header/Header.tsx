@@ -40,7 +40,7 @@ const Header = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
 
   let logoSrc = logo;
 
-  const router = useRouter();
+
  
 
   return (
