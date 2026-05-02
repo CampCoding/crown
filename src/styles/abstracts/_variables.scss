@@ -1,0 +1,63 @@
+// (1.02) variables
+
+// ClashDisplay local font
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("/fonts/ClashDisplay-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("/fonts/ClashDisplay-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("/fonts/ClashDisplay-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("/fonts/ClashDisplay-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+// inter google font source
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  // font family
+  --inter: "Inter", sans-serif;
+  --clash: "ClashDisplay", sans-serif;
+
+  // theme default
+  --theme-font: var(--inter);
+  --title-font: var(--clash);
+  --theme-bg: #1C2A33;
+  --theme-color: #F1F5F8;
+
+  // colors
+  --white: #ffffff;
+  --white-crown: #F1F5F8;
+  --black: rgb(28, 42, 51);
+  --primary-color: #0082FA;
+  --secondary-color: #757575;
+  --tertiary-color: #1C2A33;
+  --quaternary-color: #040404;
+  --quinary-color: #c1c1c1;
+  --senary-color: #191919;
+  --septenary-color: #101010;
+  --octonary-color: #1a1a1a;
+  --nonary-color: #D9D9D9;
+
+  // transitions
+  --transition: all 0.3s ease-in-out;
+
+  // box shadow
+  --shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  --shadow-secondary: 0 0 31px rgba(0, 0, 0, 0.1);
+}
