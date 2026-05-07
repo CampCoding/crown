@@ -63,7 +63,10 @@ const HomeSponsor = () => {
                 {logos.map((logo, index) => (
                   <SwiperSlide key={index}>
                     <div className="sponsor__slider-item">
-                      <Image src={logo} alt="Image" />
+                      <Image
+                        src={logo}
+                        alt={`Crown Agency Partner ${index + 1}`}
+                      />
                     </div>
                   </SwiperSlide>
                 ))}

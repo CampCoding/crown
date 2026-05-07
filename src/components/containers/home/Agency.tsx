@@ -103,13 +103,13 @@ const Agency = () => {
             <div className="agency__thumb fade-left">
               <Image
                 src={thumbone}
-                alt="Image"
+                alt="Crown Agency Team"
                 className="thumb-one"
                 priority
               />
               <Image
                 src={thumbtwo}
-                alt="Image"
+                alt="Crown Agency Work"
                 className="thumb-two"
                 priority
               />
@@ -122,21 +122,21 @@ const Agency = () => {
                 <i className="fa-solid fa-arrow-right"></i>
               </span>
               <h2 className="title title-anim">
-                Empowering Brands Through Creative Excellence
+                Empowering Brands Through Marketing & Software Excellence
               </h2>
               <div className="paragraph">
                 <p>
-                  Crown is a forward-thinking creative agency dedicated to
-                  transforming visions into reality. We combine innovative
-                  shooting techniques, strategic branding, and high-impact
-                  content creation to help your business lead in a competitive
-                  market.
+                  Crown Agency is a forward-thinking marketing and software
+                  agency dedicated to transforming visions into reality. We
+                  combine strategic branding, performance marketing, and
+                  cutting-edge software development to help your business lead
+                  in a competitive market.
                 </p>
               </div>
               <div className="skill-wrap">
                 <div className="skill-bar-single">
                   <div className="skill-bar-title">
-                    <p className="primary-text">Shooting & Production</p>
+                    <p className="primary-text">Marketing & Branding</p>
                   </div>
                   <div className="skill-bar-wrapper" data-percent="95%">
                     <div className="skill-bar">
@@ -148,7 +148,7 @@ const Agency = () => {
                 </div>
                 <div className="skill-bar-single">
                   <div className="skill-bar-title">
-                    <p className="primary-text">Branding & Design</p>
+                    <p className="primary-text">Web & Mobile Development</p>
                   </div>
                   <div className="skill-bar-wrapper" data-percent="90%">
                     <div className="skill-bar">
@@ -160,7 +160,10 @@ const Agency = () => {
                 </div>
               </div>
               <div className="section__content-cta">
-                <Link href="about-us" className="btn btn--primary hover:text-white!">
+                <Link
+                  href="/about-us"
+                  className="btn btn--primary hover:text-white!"
+                >
                   Know More
                 </Link>
               </div>
@@ -168,8 +171,13 @@ const Agency = () => {
           </div>
         </div>
       </div>
-      <Image src={star} alt="Image" className="star" priority />
-      <Image src={dotlarge} alt="Image" className="dot-large" priority />
+      <Image src={star} alt="decorative star" className="star" priority />
+      <Image
+        src={dotlarge}
+        alt="decorative dot"
+        className="dot-large"
+        priority
+      />
       <NetworkGrid />
     </section>
   );

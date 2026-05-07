@@ -8,11 +8,12 @@ import star from "public/images/star.png";
 import videoframe from "public/images/video-frame.png";
 import YoutubeEmbed from "@/components/youtube/YoutubeEmbed";
 
-
 import LightPillar from "../../LightPillar";
 import NetworkGrid from "../NetworkGrid";
+import { COMPANY_INFO } from "@/lib/constants";
 
 gsap.registerPlugin(ScrollTrigger);
+
 const HomeOneBanner = () => {
   const [videoActive, setVideoActive] = useState(false);
 
@@ -52,9 +53,6 @@ const HomeOneBanner = () => {
   return (
     <>
       <section className="banner fade-wrapper overflow-hidden">
-        {/* <LightPillar
-         
-        /> */}
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -68,10 +66,10 @@ const HomeOneBanner = () => {
                 </h1>
                 <div className="banner__content-inner fade-top">
                   <p>
-                    Crown is a modern marketing company built to help brands
-                    lead, not follow. We combine creativity, strategy, and data
-                    to create impactful campaigns that grow your presence and
-                    elevate your brand.
+                    Crown Agency is a modern marketing company built to help
+                    brands lead, not follow. We combine creativity, strategy,
+                    and data to create impactful campaigns that grow your
+                    presence and elevate your brand.
                   </p>
                   <div className="cta section__content-cta">
                     <div className="single">
@@ -90,39 +88,64 @@ const HomeOneBanner = () => {
         </div>
         <Image
           src={bannerNew}
-          alt="Image"
+          alt="Crown Agency Banner"
           className="banner-one-thumb d-none d-sm-block g-ban-one"
         />
-        <Image src={star} alt="Image" className="star" />
+        <Image src={star} alt="decorative star" className="star" />
         <div className="banner-left-text banner-social-text d-none d-md-flex">
-          <Link href="mailto:info@xpovio.com">mail : info@xpovio.com</Link>
-          <Link href="tel:99-2158-003-6980">Call : +99 2158 003 6980</Link>
+          <Link
+            href={`mailto:${COMPANY_INFO.email}`}
+            aria-label="Email Crown Agency"
+          >
+            mail : {COMPANY_INFO.email}
+          </Link>
+          <Link
+            href={`tel:${COMPANY_INFO.phone}`}
+            aria-label="Call Crown Agency"
+          >
+            Call : {COMPANY_INFO.phone}
+          </Link>
         </div>
         <div className="banner-right-text banner-social-text d-none d-md-flex">
-          <Link href="https://www.instagram.com/" target="_blank">
-            instagram
-          </Link>
-          <Link href="https://www.pinterest.com/" target="_blank">
-            Linkedin
-          </Link>
-          <Link href="https://www.facebook.com/" target="_blank">
-            facebook
-          </Link>
+          {COMPANY_INFO.social.instagram && (
+            <Link
+              href={COMPANY_INFO.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Crown on Instagram"
+            >
+              instagram
+            </Link>
+          )}
+          {COMPANY_INFO.social.linkedin && (
+            <Link
+              href={COMPANY_INFO.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Crown on LinkedIn"
+            >
+              Linkedin
+            </Link>
+          )}
+          {COMPANY_INFO.social.facebook && (
+            <Link
+              href={COMPANY_INFO.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Crown on Facebook"
+            >
+              facebook
+            </Link>
+          )}
         </div>
         <button
           className="video-frame video-btn"
           onClick={() => setVideoActive(true)}
+          aria-label="Play Crown Agency intro video"
         >
-          <Image src={videoframe} alt="Image" priority />
+          <Image src={videoframe} alt="Watch video" priority />
           <i className="fa-sharp fa-solid fa-play"></i>
         </button>
-        {/* <div className="lines d-none d-lg-flex">
-          <div className="line"></div>
-          <div className="line"></div>
-          <div className="line"></div>
-          <div className="line"></div>
-          <div className="line"></div>
-        </div> */}
         <NetworkGrid />
       </section>
       <div

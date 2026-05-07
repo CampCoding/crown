@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -11,13 +11,33 @@ import {
   ArrowRight,
   ChevronRight,
   ChevronLeft,
-  Camera,
-  Layers,
+  Palette,
+  Code2,
+  Smartphone,
+  Search,
+  Share2,
+  TrendingUp,
+  Crown,
   Sparkles,
+  Camera,
   BarChart3,
 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
+
+// Icon mapping for dynamic rendering
+const iconMap: Record<string, React.ReactNode> = {
+  Palette: <Palette size={24} />,
+  Code2: <Code2 size={24} />,
+  Smartphone: <Smartphone size={24} />,
+  Search: <Search size={24} />,
+  Share2: <Share2 size={24} />,
+  TrendingUp: <TrendingUp size={24} />,
+  Crown: <Crown size={24} />,
+  Sparkles: <Sparkles size={24} />,
+  Camera: <Camera size={24} />,
+  BarChart3: <BarChart3 size={24} />,
+};
 
 const ServiceMain = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -45,64 +65,146 @@ const ServiceMain = () => {
     return () => ctx.revert();
   }, []);
 
+  // 👑 Crown's Full Services 2026
   const services = [
     {
       id: "01",
-      title: "Shooting",
-      subtitle: "Creative production for modern brands",
-      icon: <Camera size={24} />,
+      title: "UI/UX Design",
+      subtitle: "Human-centered interfaces that convert.",
+      icon: "Palette",
       color: "#0072ed",
-      items: ["Shooting Ideas", "Promo & Podcasts", "Reels & YouTube", "Models & Stylist"],
+      items: ["User Research", "Prototyping", "Design Systems", "Mobile-First"],
+      slug: "ui-ux-design",
     },
     {
       id: "02",
-      title: "Branding",
-      subtitle: "Build a brand people remember",
-      icon: <Layers size={24} />,
+      title: "Web Development",
+      subtitle: "Lightning-fast, scalable web apps.",
+      icon: "Code2",
       color: "#6366f1",
-      items: ["Visual Identity", "Strategy", "Logo Design", "UI/UX Design"],
+      items: ["Next.js & React", "E-commerce", "Custom CMS", "API Integration"],
+      slug: "web-development",
     },
     {
       id: "03",
-      title: "Content",
-      subtitle: "Content that speaks and sells",
-      icon: <Sparkles size={24} />,
+      title: "Mobile Development",
+      subtitle: "Native & cross-platform apps for iOS / Android.",
+      icon: "Smartphone",
       color: "#ec4899",
-      items: ["Content Strategy", "Launching Plan", "Trendy Content", "Copywriting"],
+      items: ["iOS Native", "Android Native", "React Native"],
+      slug: "mobile-development",
     },
     {
       id: "04",
-      title: "Growth",
-      subtitle: "Scale with clarity, not chaos",
-      icon: <BarChart3 size={24} />,
+      title: "SEO Optimization",
+      subtitle: "Rank higher, attract better, convert more.",
+      icon: "Search",
+      color: "#10b981",
+      items: [
+        "Technical SEO",
+        "Keyword Strategy",
+        "Link Building",
+        "Local SEO",
+      ],
+      slug: "seo-optimization",
+    },
+    {
+      id: "05",
+      title: "Social Media Marketing",
+      subtitle: "Build communities that drive growth.",
+      icon: "Share2",
       color: "#f97316",
-      items: ["Market Research", "Business Analysis", "Strategy Growth", "Scaling"],
+      items: ["Content Calendar", "Community Mgmt", "Influencers", "Analytics"],
+      slug: "social-media-marketing",
+    },
+    {
+      id: "06",
+      title: "Performance Marketing",
+      subtitle: "Data-driven ads with real ROI.",
+      icon: "TrendingUp",
+      color: "#eab308",
+      items: ["Meta Ads", "Google Ads", "TikTok Ads", "A/B Testing"],
+      slug: "performance-marketing",
+    },
+    {
+      id: "07",
+      title: "Branding & Identity",
+      subtitle: "Build a brand worthy of a Crown.",
+      icon: "Crown",
+      color: "#8b5cf6",
+      items: ["Brand Strategy", "Logo & Identity", "Guidelines", "Voice"],
+      slug: "branding-identity",
+    },
+    {
+      id: "08",
+      title: "Content Creation",
+      subtitle: "Stories that captivate and convert.",
+      icon: "Sparkles",
+      color: "#06b6d4",
+      items: [
+        "Reels & Videos",
+        "Photography",
+        "Copywriting",
+        "Motion Graphics",
+      ],
+      slug: "content-creation",
+    },
+    {
+      id: "09",
+      title: "Media Production",
+      subtitle: "Cinematic-grade content production.",
+      icon: "Camera",
+      color: "#22d3ee",
+      items: [
+        "Commercial Shoots",
+        "Product Photo",
+        "Studio Setup",
+        "Post-Production",
+      ],
+      slug: "media-production",
+    },
+    {
+      id: "10",
+      title: "Growth Strategy",
+      subtitle: "Scale with clarity, not chaos.",
+      icon: "BarChart3",
+      color: "#22c55e",
+      items: ["Market Research", "Business Dev", "Sales Funnel", "CRM"],
+      slug: "growth-strategy",
     },
   ];
 
   return (
-    <section 
-    style={{
-  backgroundImage: `linear-gradient(rgba(28, 42, 51, 0.9), rgba(28, 42, 51, 0.5)), url('/images/Untitled design - 2026-04-27T170151.794.png')`,
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-}}
-    ref={containerRef} className="service-section bg-(--black) py-5">
+    <section
+      style={{
+        backgroundImage: `linear-gradient(rgba(28, 42, 51, 0.9), rgba(28, 42, 51, 0.5)), url('/images/Untitled design - 2026-04-27T170151.794.png')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+      ref={containerRef}
+      className="service-section bg-(--black) py-5"
+    >
       <div className="container">
         <div className="service-v4__slider-w position-relative">
           <Swiper
             slidesPerView={1}
-            spaceBetween={24}
+            spaceBetween={20}
             speed={1000}
             loop={true}
-            modules={[Autoplay, Navigation]}
+            modules={[Autoplay, Navigation, Pagination]}
             autoplay={{ delay: 5000, disableOnInteraction: false }}
             navigation={{ nextEl: ".nav-next", prevEl: ".nav-prev" }}
+            pagination={{
+              clickable: true,
+              el: ".service-pagination",
+            }}
             breakpoints={{
-              1200: { slidesPerView: 4 },
-              992: { slidesPerView: 3 },
-              768: { slidesPerView: 2 },
+              320: { slidesPerView: 1, spaceBetween: 16 },
+              576: { slidesPerView: 1.3, spaceBetween: 18 },
+              768: { slidesPerView: 2, spaceBetween: 20 },
+              992: { slidesPerView: 3, spaceBetween: 22 },
+              1200: { slidesPerView: 4, spaceBetween: 24 },
             }}
             className="service-swiper pb-5"
           >
@@ -119,7 +221,7 @@ const ServiceMain = () => {
 
                     <div>
                       <div className="card-header-area">
-                        <div className="icon-box">{service.icon}</div>
+                        <div className="icon-box">{iconMap[service.icon]}</div>
 
                         <div className="mini-badge">
                           <span></span>
@@ -128,7 +230,7 @@ const ServiceMain = () => {
                       </div>
 
                       <div className="card-content">
-                        <h4 className="service-title">{service.title}</h4>
+                        <h3 className="service-title">{service.title}</h3>
                         <p className="service-subtitle">{service.subtitle}</p>
 
                         <div className="service-tags">
@@ -139,18 +241,25 @@ const ServiceMain = () => {
                       </div>
                     </div>
 
-                    <Link href="/service-single" className="action-link">
-                      <span>Access Module</span>
+                    <div
+                      // href={`/service-single?service=${service.slug}`}
+                      className="action-link"
+                    >
+                      <span>Explore Service</span>
                       <div className="arrow-box">
                         <ArrowRight size={16} />
                       </div>
-                    </Link>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
 
+          {/* Pagination Dots */}
+          <div className="service-pagination d-flex justify-content-center gap-2 mb-3"></div>
+
+          {/* Navigation Buttons */}
           <div className="d-flex gap-2 justify-content-center mt-4">
             <button className="nav-btn nav-prev" aria-label="Previous service">
               <ChevronLeft size={20} />
@@ -168,6 +277,10 @@ const ServiceMain = () => {
           position: relative;
         }
 
+        .service-section :global(.service-swiper) {
+          padding: 0 5px 50px;
+        }
+
         .service-section :global(.service-swiper .swiper-wrapper) {
           align-items: stretch;
         }
@@ -175,6 +288,23 @@ const ServiceMain = () => {
         .service-section :global(.service-swiper .swiper-slide) {
           height: auto;
           display: flex;
+        }
+
+        .service-section
+          :global(.service-pagination .swiper-pagination-bullet) {
+          width: 8px;
+          height: 8px;
+          background: rgba(255, 255, 255, 0.2);
+          opacity: 1;
+          transition: all 0.3s ease;
+          border-radius: 50%;
+        }
+
+        .service-section
+          :global(.service-pagination .swiper-pagination-bullet-active) {
+          background: #0072ed;
+          width: 24px;
+          border-radius: 4px;
         }
 
         .service-v4-card {
@@ -186,7 +316,11 @@ const ServiceMain = () => {
           overflow: hidden;
           isolation: isolate;
           background:
-            linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02)),
+            linear-gradient(
+              145deg,
+              rgba(255, 255, 255, 0.12),
+              rgba(255, 255, 255, 0.02)
+            ),
             #090909;
           border: 1px solid rgba(255, 255, 255, 0.09);
           transition:
@@ -281,18 +415,24 @@ const ServiceMain = () => {
           align-items: center;
           justify-content: space-between;
           margin-bottom: 2rem;
+          gap: 1rem;
         }
 
         .icon-box {
           width: 62px;
           height: 62px;
+          min-width: 62px;
           border-radius: 20px;
           display: flex;
           align-items: center;
           justify-content: center;
           color: white;
           background:
-            radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.25), transparent 35%),
+            radial-gradient(
+              circle at 30% 20%,
+              rgba(255, 255, 255, 0.25),
+              transparent 35%
+            ),
             linear-gradient(145deg, var(--accent), rgba(255, 255, 255, 0.08));
           box-shadow:
             0 16px 35px -18px var(--accent),
@@ -336,19 +476,19 @@ const ServiceMain = () => {
 
         .service-title {
           color: #fff;
-          font-size: 1.75rem;
+          font-size: 1.6rem;
           font-weight: 800;
-          line-height: 1.1;
-          letter-spacing: -0.7px;
+          line-height: 1.15;
+          letter-spacing: -0.5px;
           margin-bottom: 0.8rem;
           text-transform: uppercase;
         }
 
         .service-subtitle {
-          color: rgba(255, 255, 255, 0.52);
-          font-size: 0.95rem;
-          line-height: 1.7;
-          min-height: 52px;
+          color: rgba(255, 255, 255, 0.55);
+          font-size: 0.92rem;
+          line-height: 1.6;
+          min-height: 48px;
           margin-bottom: 1.4rem;
           max-width: 95%;
         }
@@ -356,19 +496,19 @@ const ServiceMain = () => {
         .service-tags {
           display: flex;
           flex-wrap: wrap;
-          gap: 0.6rem;
+          gap: 0.5rem;
           margin-bottom: 1.6rem;
         }
 
         .service-tags span {
           display: inline-flex;
           align-items: center;
-          padding: 0.55rem 0.75rem;
+          padding: 0.5rem 0.7rem;
           border-radius: 999px;
           color: rgba(255, 255, 255, 0.72);
           background: rgba(255, 255, 255, 0.045);
           border: 1px solid rgba(255, 255, 255, 0.075);
-          font-size: 0.78rem;
+          font-size: 0.74rem;
           font-weight: 600;
           transition:
             background 0.3s ease,
@@ -394,7 +534,7 @@ const ServiceMain = () => {
           text-decoration: none;
           background: rgba(255, 255, 255, 0.055);
           border: 1px solid rgba(255, 255, 255, 0.1);
-          font-size: 0.76rem;
+          font-size: 0.74rem;
           font-weight: 800;
           text-transform: uppercase;
           letter-spacing: 1px;
@@ -404,6 +544,7 @@ const ServiceMain = () => {
         .arrow-box {
           width: 34px;
           height: 34px;
+          min-width: 34px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -446,21 +587,90 @@ const ServiceMain = () => {
           transform: translateY(-3px);
         }
 
-        @media (max-width: 767px) {
+        /* ============================ */
+        /* RESPONSIVE BREAKPOINTS       */
+        /* ============================ */
+
+        @media (max-width: 1199px) {
           .service-v4-card {
-            min-height: 410px;
+            min-height: 425px;
           }
-
           .card-inner {
-            padding: 1.5rem;
+            padding: 1.75rem;
           }
-
           .service-title {
             font-size: 1.45rem;
           }
-
           .service-number {
-            font-size: 4.4rem;
+            font-size: 4.8rem;
+          }
+        }
+
+        @media (max-width: 991px) {
+          .service-v4-card {
+            min-height: 410px;
+          }
+          .card-inner {
+            padding: 1.5rem;
+          }
+        }
+
+        @media (max-width: 767px) {
+          .service-v4-card {
+            min-height: 400px;
+          }
+          .card-inner {
+            padding: 1.4rem;
+          }
+          .service-title {
+            font-size: 1.35rem;
+          }
+          .service-subtitle {
+            font-size: 0.88rem;
+            min-height: auto;
+            margin-bottom: 1.2rem;
+          }
+          .service-number {
+            font-size: 4rem;
+          }
+          .icon-box {
+            width: 54px;
+            height: 54px;
+            min-width: 54px;
+            border-radius: 16px;
+          }
+          .card-header-area {
+            margin-bottom: 1.5rem;
+          }
+          .mini-badge {
+            font-size: 0.66rem;
+            padding: 0.4rem 0.7rem;
+          }
+          .service-tags span {
+            font-size: 0.7rem;
+            padding: 0.42rem 0.62rem;
+          }
+        }
+
+        @media (max-width: 575px) {
+          .service-v4-card {
+            min-height: 390px;
+            border-radius: 22px;
+          }
+          .card-inner {
+            padding: 1.25rem;
+          }
+          .service-title {
+            font-size: 1.25rem;
+          }
+          .nav-btn {
+            width: 44px;
+            height: 44px;
+          }
+          .service-number {
+            font-size: 3.5rem;
+            right: 1rem;
+            top: 0.8rem;
           }
         }
       `}</style>

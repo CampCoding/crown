@@ -1,0 +1,37 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /404
+Disallow: /index-light
+Disallow: /index-two
+Disallow: /index-two-light
+Disallow: /index-three
+Disallow: /index-three-light
+Disallow: /index-four
+Disallow: /index-four-light
+Disallow: /index-five
+Disallow: /index-five-light
+Disallow: /service-single
+Disallow: /our-projects
+Disallow: /project-single
+Disallow: /portfolio
+Disallow: /our-story
+Disallow: /our-teams
+Disallow: /team-single
+Disallow: /client-feedback
+Disallow: /faq
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+
+# Host
+Host: https://crown-agency.com
+
+# Sitemaps
+Sitemap: https://crown-agency.com/sitemap.xml

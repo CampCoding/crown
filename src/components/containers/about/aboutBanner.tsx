@@ -7,6 +7,7 @@ import star from "public/images/star.png";
 import dotlarge from "public/images/agency/dot-large.png";
 import thumb from "public/images/agency/thumb-one-new.png";
 import NetworkGrid from "@/components/layout/NetworkGrid";
+import { COMPANY_INFO } from "@/lib/constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,7 +62,7 @@ const AboutUsBanner = () => {
           <div className="col-12 col-lg-6">
             <div className="banner__content text-start">
               <span className="sub-title">
-                About Crown
+                About Crown Agency
                 <i className="fa-solid fa-arrow-right"></i>
               </span>
               <h1 className="text-uppercase fw-9 mb-0 title-anim">
@@ -70,10 +71,11 @@ const AboutUsBanner = () => {
               </h1>
               <div className="banner__content-inner fade-top">
                 <p>
-                  Crown is a leading digital agency dedicated to transforming
-                  brands through creative shooting, strategic content creation,
-                  and innovative business development. We partner with
-                  visionaries to build lasting visual identities.
+                  Crown Agency is a leading marketing & software agency
+                  dedicated to transforming brands through strategic branding,
+                  creative content, performance marketing, and cutting-edge
+                  development. We partner with visionaries to build lasting
+                  digital identities.
                 </p>
                 <div className="cta section__content-cta">
                   <div className="single">
@@ -90,17 +92,29 @@ const AboutUsBanner = () => {
           </div>
           <div className="col-12 col-lg-6">
             <div className="about-banner__thumb fade-right">
-              <Image src={thumb} alt="Image" className="unset" />
+              <Image src={thumb} alt="Crown Agency Team" className="unset" />
             </div>
           </div>
         </div>
       </div>
-      <Image src={star} alt="Image" className="star" priority />
-      <Image src={dotlarge} alt="Image" className="dot-large" priority />
+      <Image src={star} alt="decorative star" className="star" priority />
+      <Image
+        src={dotlarge}
+        alt="decorative dot"
+        className="dot-large"
+        priority
+      />
 
       <div className="banner-left-text banner-social-text d-none d-md-flex">
-        <Link href="mailto:info@crown.com">mail : info@crown.com</Link>
-        <Link href="tel:99-2158-003-6980">Call : +99 2158 003 6980</Link>
+        <Link
+          href={`mailto:${COMPANY_INFO.email}`}
+          aria-label="Email Crown Agency"
+        >
+          mail : {COMPANY_INFO.email}
+        </Link>
+        <Link href={`tel:${COMPANY_INFO.phone}`} aria-label="Call Crown Agency">
+          Call : {COMPANY_INFO.phone}
+        </Link>
       </div>
 
       <NetworkGrid />

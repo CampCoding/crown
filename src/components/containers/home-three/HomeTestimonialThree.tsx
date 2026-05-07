@@ -28,7 +28,7 @@ const HomeTestimonialThree = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
-        }
+        },
       });
     }, sectionRef);
 
@@ -40,31 +40,38 @@ const HomeTestimonialThree = () => {
     setNextSlideIndex(nextIndex);
   };
 
+  // Crown's Client Testimonials
   const testimonials = [
     {
       name: "Daniel Smith",
       role: "Senior Engineer",
       thumb: sthumb,
-      content: "The level of precision and innovation they brought to our digital infrastructure was transformative. Their end-to-end solutions helped us scale faster than we ever anticipated."
+      content:
+        "Crown delivered a level of precision and innovation we hadn't seen before. Their end-to-end approach helped us scale our digital infrastructure faster than anticipated.",
     },
     {
       name: "Sarah Johnson",
       role: "Creative Director",
       thumb: sthumbtwo,
-      content: "Crafting digital experiences requires a deep understanding of both tech and art. This team excels at both, delivering results that are as beautiful as they are functional."
+      content:
+        "Crafting digital experiences requires deep understanding of both tech and art. Crown excels at both — delivering results that are as beautiful as they are functional.",
     },
     {
       name: "Michael Chen",
       role: "Founder & CEO",
       thumb: sthumbthree,
-      content: "Working with them was the best decision for our brand. Their strategic approach to UI architecture and industry-defining scaling defined our success in a crowded market."
-    }
+      content:
+        "Working with Crown was the best decision for our brand. Their strategic UI architecture and growth-focused marketing defined our success in a crowded market.",
+    },
   ];
 
   return (
-    <section ref={sectionRef} className="section testimonial-v2 py-10! position-relative overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="section testimonial-v2 position-relative overflow-hidden"
+    >
       {/* Background Text Slider */}
-      <div className="bg-text-slider-wrapper opacity-5 mb-5">
+      <div className="bg-text-slider-wrapper opacity-5 mb-4 mb-md-5">
         <Swiper
           slidesPerView="auto"
           spaceBetween={100}
@@ -78,8 +85,10 @@ const HomeTestimonialThree = () => {
           className="bg-text-slider"
         >
           {[1, 2, 3, 4].map((_, i) => (
-            <SwiperSlide key={i} style={{ width: 'auto' }}>
-              <h2 className="display-1 fw-900 text-white text-uppercase ls-3 m-0">CLIENT FEEDBACK • INNOVATION • EXPERTISE •</h2>
+            <SwiperSlide key={i} style={{ width: "auto" }}>
+              <h2 className="bg-marquee-text fw-900 text-white text-uppercase ls-3 m-0">
+                CLIENT FEEDBACK • CROWN • INNOVATION • EXPERTISE •
+              </h2>
             </SwiperSlide>
           ))}
         </Swiper>
@@ -88,7 +97,7 @@ const HomeTestimonialThree = () => {
       <div className="container position-relative z-2">
         <div className="row justify-content-center">
           <div className="col-12 col-xxl-10">
-            <div className="testimonial-v2__card rounded-5 overflow-hidden p-4 p-md-5">
+            <div className="testimonial-v2__card rounded-5 overflow-hidden p-3 p-sm-4 p-md-5">
               <Swiper
                 slidesPerView={1}
                 spaceBetween={30}
@@ -111,24 +120,39 @@ const HomeTestimonialThree = () => {
                   <SwiperSlide key={index}>
                     <div className="row gaper align-items-center">
                       <div className="col-12 col-lg-4">
-                        <div className="testimonial-thumb-wrapper position-relative mx-auto" style={{ maxWidth: '300px' }}>
+                        <div
+                          className="testimonial-thumb-wrapper position-relative mx-auto"
+                          style={{ maxWidth: "260px" }}
+                        >
                           <div className="thumb-border" />
                           <div className="thumb-inner rounded-circle overflow-hidden border border-white-20 p-2">
-                            <Image src={testi.thumb} alt={testi.name} className="img-fluid rounded-circle" />
+                            <Image
+                              src={testi.thumb}
+                              alt={`${testi.name} - Crown Client`}
+                              className="img-fluid rounded-circle"
+                            />
                           </div>
-                          <div className="quote-icon-box position-absolute bottom-0 end-0 bg-primary rounded-circle d-flex align-items-center justify-content-center p-3 shadow-xl">
-                            <Quote size={20} className="text-white" fill="white" />
+                          <div className="quote-icon-box position-absolute bottom-0 end-0 bg-primary rounded-circle d-flex align-items-center justify-content-center p-2 p-md-3 shadow-xl">
+                            <Quote
+                              size={18}
+                              className="text-white"
+                              fill="white"
+                            />
                           </div>
                         </div>
                       </div>
                       <div className="col-12 col-lg-7 offset-lg-1 text-center text-lg-start mt-4 mt-lg-0">
                         <div className="testimonial-v2__content">
-                          <h4 className="fs-3 fw-500 text-slate-200 leading-relaxed italic mb-5">
+                          <h4 className="testimonial-quote fw-500 text-slate-200 leading-relaxed italic mb-4 mb-md-5">
                             &quot;{testi.content}&quot;
                           </h4>
                           <div className="author-info">
-                            <h5 className="text-white fw-900 text-uppercase ls-1 mb-1">{testi.name}</h5>
-                            <p className="text-primary small fw-bold text-uppercase ls-2">{testi.role}</p>
+                            <h5 className="text-white fw-900 text-uppercase ls-1 mb-1">
+                              {testi.name}
+                            </h5>
+                            <p className="text-primary small fw-bold text-uppercase ls-2 mb-0">
+                              {testi.role}
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -138,11 +162,17 @@ const HomeTestimonialThree = () => {
               </Swiper>
 
               {/* Navigation */}
-              <div className="d-flex gap-3 mt-5 justify-content-center justify-content-lg-start px-2">
-                <button className="nav-btn prev-testi-v2">
+              <div className="d-flex gap-3 mt-4 mt-md-5 justify-content-center justify-content-lg-start px-2">
+                <button
+                  className="nav-btn prev-testi-v2"
+                  aria-label="Previous testimonial"
+                >
                   <ChevronLeft size={20} />
                 </button>
-                <button className="nav-btn next-testi-v2">
+                <button
+                  className="nav-btn next-testi-v2"
+                  aria-label="Next testimonial"
+                >
                   <ChevronRight size={20} />
                 </button>
               </div>
@@ -154,20 +184,42 @@ const HomeTestimonialThree = () => {
       <style jsx>{`
         .testimonial-v2 {
           background: transparent;
+          padding-top: 5rem;
+          padding-bottom: 5rem;
         }
         .bg-text-slider-wrapper {
           user-select: none;
           pointer-events: none;
+          overflow: hidden;
         }
-        .ls-3 { letter-spacing: 10px; }
-        .ls-2 { letter-spacing: 2px; }
-        .ls-1 { letter-spacing: 1px; }
+
+        .bg-marquee-text {
+          font-size: clamp(2.5rem, 8vw, 6rem);
+          line-height: 1;
+          white-space: nowrap;
+        }
+
+        .ls-3 {
+          letter-spacing: 10px;
+        }
+        .ls-2 {
+          letter-spacing: 2px;
+        }
+        .ls-1 {
+          letter-spacing: 1px;
+        }
 
         .testimonial-v2__card {
           background: rgba(255, 255, 255, 0.03);
           backdrop-filter: blur(20px);
           border: 1px solid rgba(255, 255, 255, 0.08);
           box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Quote text - Responsive */
+        .testimonial-quote {
+          font-size: clamp(1rem, 2vw, 1.5rem);
+          line-height: 1.7;
         }
 
         .testimonial-thumb-wrapper {
@@ -181,15 +233,22 @@ const HomeTestimonialThree = () => {
           animation: rotate 20s linear infinite;
         }
         @keyframes rotate {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
         }
 
-        .leading-relaxed { line-height: 1.6; }
-        
+        .leading-relaxed {
+          line-height: 1.6;
+        }
+
         .nav-btn {
           width: 50px;
           height: 50px;
+          min-width: 50px;
           border-radius: 50%;
           border: 1px solid rgba(255, 255, 255, 0.1);
           background: rgba(255, 255, 255, 0.05);
@@ -205,9 +264,51 @@ const HomeTestimonialThree = () => {
           transform: scale(1.1);
         }
 
+        /* ============================================ */
+        /* RESPONSIVE                                   */
+        /* ============================================ */
+
         @media (max-width: 991px) {
+          .testimonial-v2 {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+          }
           .testimonial-v2__card {
             padding: 2rem !important;
+          }
+          .ls-3 {
+            letter-spacing: 6px;
+          }
+        }
+
+        @media (max-width: 767px) {
+          .testimonial-v2 {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+          }
+          .testimonial-v2__card {
+            padding: 1.5rem !important;
+          }
+          .testimonial-thumb-wrapper {
+            max-width: 200px !important;
+          }
+          .ls-3 {
+            letter-spacing: 4px;
+          }
+        }
+
+        @media (max-width: 575px) {
+          .testimonial-v2__card {
+            padding: 1.25rem !important;
+            border-radius: 1.5rem !important;
+          }
+          .testimonial-thumb-wrapper {
+            max-width: 170px !important;
+          }
+          .nav-btn {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
           }
         }
       `}</style>

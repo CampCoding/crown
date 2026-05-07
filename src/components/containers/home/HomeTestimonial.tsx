@@ -17,8 +17,7 @@ const HomeTestimonial = () => {
     setNextSlideIndex(nextIndex);
   };
   return (
-    <section 
-    className="section testimonial bg-[#1c2a33]! pt-0 position-relative fade-wrapper">
+    <section className="section testimonial bg-[#1c2a33]! pt-0 position-relative fade-wrapper">
       <div className="testimonial__text-slider-w">
         <Swiper
           slidesPerView="auto"
@@ -40,7 +39,7 @@ const HomeTestimonial = () => {
             <SwiperSlide key={i}>
               <div className="testimonial__text-slider-single">
                 <h2 className="h1">
-                  <Link href="client-feedback">
+                  <Link href="/client-feedback">
                     client&apos;s testimonial
                     <i className="fa-sharp fa-solid fa-arrow-down-right"></i>
                   </Link>
@@ -82,7 +81,10 @@ const HomeTestimonial = () => {
                     <div className="row gaper align-items-center">
                       <div className="col-12 col-lg-4 col-xxl-4">
                         <div className="thumb">
-                          <Image src={sthumb} alt="Image" />
+                          <Image
+                            src={sthumb}
+                            alt="Daniel Smith - Crown Client"
+                          />
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="44"
@@ -105,7 +107,10 @@ const HomeTestimonial = () => {
                           </div>
                           <div className="content">
                             <h4>
-                              &quot;Crown transformed our brand identity completely. Their shooting team captured our essence in ways we didn&apos;t think possible. The ROI on our last campaign was incredible.&quot;
+                              &quot;Crown Agency transformed our brand identity
+                              completely. Their team captured our essence in
+                              ways we didn&apos;t think possible. The ROI on our
+                              last campaign was incredible.&quot;
                             </h4>
                           </div>
                           <div className="content-cta">
@@ -122,7 +127,10 @@ const HomeTestimonial = () => {
                     <div className="row gaper align-items-center">
                       <div className="col-12 col-lg-4 col-xxl-4">
                         <div className="thumb">
-                          <Image src={sthumbtwo} alt="Image" />
+                          <Image
+                            src={sthumbtwo}
+                            alt="Sarah Jenkins - Crown Client"
+                          />
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="44"
@@ -145,7 +153,11 @@ const HomeTestimonial = () => {
                           </div>
                           <div className="content">
                             <h4>
-                              &quot;The content strategy provided by Crown was a game-changer for our social presence. Our engagement rates tripled within three months. Professional and highly creative team!&quot;
+                              &quot;The content & marketing strategy provided by
+                              Crown Agency was a game-changer for our social
+                              presence. Our engagement rates tripled within
+                              three months. Professional and highly creative
+                              team!&quot;
                             </h4>
                           </div>
                           <div className="content-cta">
@@ -162,7 +174,10 @@ const HomeTestimonial = () => {
                     <div className="row gaper align-items-center">
                       <div className="col-12 col-lg-4 col-xxl-4">
                         <div className="thumb">
-                          <Image src={sthumbthree} alt="Image" />
+                          <Image
+                            src={sthumbthree}
+                            alt="Alex Rivera - Crown Client"
+                          />
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="44"
@@ -185,7 +200,10 @@ const HomeTestimonial = () => {
                           </div>
                           <div className="content">
                             <h4>
-                              &quot;Working with Crown on our business development strategy opened doors we hadn&apos;t even considered. Their holistic approach to branding and digital presence is unmatched.&quot;
+                              &quot;Working with Crown Agency on our software
+                              and growth strategy opened doors we hadn&apos;t
+                              even considered. Their holistic approach to
+                              branding and digital presence is unmatched.&quot;
                             </h4>
                           </div>
                           <div className="content-cta">
@@ -203,13 +221,13 @@ const HomeTestimonial = () => {
         </div>
         <div className="slide-group justify-content-start fade-top">
           <button
-            aria-label="previous item"
+            aria-label="previous testimonial"
             className="slide-btn prev-testimonial-three"
           >
             <i className="fa-light fa-angle-left"></i>
           </button>
           <button
-            aria-label="next item"
+            aria-label="next testimonial"
             className="slide-btn next-testimonial-three"
           >
             <i className="fa-light fa-angle-right"></i>
@@ -223,13 +241,13 @@ const HomeTestimonial = () => {
             nextSlideIndex === 0
               ? sthumb
               : nextSlideIndex === 1
-              ? sthumbtwo
-              : sthumbthree
+                ? sthumbtwo
+                : sthumbthree
           }
-          alt="Next Slide Image"
+          alt="Crown Client"
         />
       </div>
-      
+
       <NetworkGrid />
     </section>
   );

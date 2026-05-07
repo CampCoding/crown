@@ -11,6 +11,8 @@ import five from "public/images/sponsor/five-new.png";
 import NetworkGrid from "@/components/layout/NetworkGrid";
 
 const AboutSponsor = () => {
+  const logos = [one, two, three, four, five, one, two, three, four, five];
+
   return (
     <div className="sponsor fade-wrapper position-relative">
       <div className="container-fluid">
@@ -49,56 +51,16 @@ const AboutSponsor = () => {
                 }}
                 className="sponsor__slider"
               >
-                <SwiperSlide>
-                  <div className="sponsor__slider-item">
-                    <Image src={one} alt="Image" />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="sponsor__slider-item">
-                    <Image src={two} alt="Image" />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="sponsor__slider-item">
-                    <Image src={three} alt="Image" />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="sponsor__slider-item">
-                    <Image src={four} alt="Image" />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="sponsor__slider-item">
-                    <Image src={five} alt="Image" />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="sponsor__slider-item">
-                    <Image src={one} alt="Image" />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="sponsor__slider-item">
-                    <Image src={two} alt="Image" />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="sponsor__slider-item">
-                    <Image src={three} alt="Image" />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="sponsor__slider-item">
-                    <Image src={four} alt="Image" />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="sponsor__slider-item">
-                    <Image src={five} alt="Image" />
-                  </div>
-                </SwiperSlide>
+                {logos.map((logo, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="sponsor__slider-item">
+                      <Image
+                        src={logo}
+                        alt={`Crown Agency Partner ${index + 1}`}
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </div>
           </div>

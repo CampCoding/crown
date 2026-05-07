@@ -3,7 +3,12 @@
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, Mail, Sparkles } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCoverflow, Navigation, Pagination } from "swiper/modules";
+import {
+  Autoplay,
+  EffectCoverflow,
+  Navigation,
+  Pagination,
+} from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -23,11 +28,13 @@ type TeamMember = {
   accent: string;
 };
 
+// 👑 Crown Agency Team
 const teamMembers: TeamMember[] = [
   {
     name: "Omar Khaled",
     role: "Creative Director",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=900&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=900&auto=format&fit=crop",
     bio: "Builds visual stories that turn simple brands into memorable experiences.",
     tag: "Brand Strategy",
     experience: "9+ Years",
@@ -36,7 +43,8 @@ const teamMembers: TeamMember[] = [
   {
     name: "Nour Hassan",
     role: "Product Designer",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop",
     bio: "Designs clean interfaces with sharp UX logic and premium interaction details.",
     tag: "UI / UX",
     experience: "7+ Years",
@@ -45,7 +53,8 @@ const teamMembers: TeamMember[] = [
   {
     name: "Youssef Adel",
     role: "Frontend Engineer",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=900&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=900&auto=format&fit=crop",
     bio: "Turns complex ideas into smooth, fast, responsive digital products.",
     tag: "Next.js",
     experience: "6+ Years",
@@ -54,7 +63,8 @@ const teamMembers: TeamMember[] = [
   {
     name: "Mariam Samir",
     role: "Marketing Lead",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=900&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=900&auto=format&fit=crop",
     bio: "Creates campaigns that feel human, look premium, and convert with purpose.",
     tag: "Growth",
     experience: "8+ Years",
@@ -63,7 +73,8 @@ const teamMembers: TeamMember[] = [
   {
     name: "Ahmed Mostafa",
     role: "Motion Designer",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=900&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=900&auto=format&fit=crop",
     bio: "Adds movement, emotion, and energy to every product story.",
     tag: "Motion",
     experience: "5+ Years",
@@ -74,19 +85,14 @@ const teamMembers: TeamMember[] = [
 export default function TeamSection() {
   return (
     <section className="relative overflow-hidden bg-(--black)! py-30! text-white">
-      {/* Background */}
-      {/* <div className="absolute inset-0">
-        <div className="absolute left-[-10%] top-[-20%] h-[420px] w-[420px] rounded-full bg-cyan-500/20 blur-[120px]" />
-        <div className="absolute bottom-[-20%] right-[-10%] h-[460px] w-[460px] rounded-full bg-fuchsia-500/20 blur-[130px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:70px_70px] opacity-20" />
-      </div> */}
-
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mx-auto mb-14 mt-1 max-w-3xl text-center">
           <h2 className="relative inline-block text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl">
-            Our <span className="text-primary">Creative
-               <AnimateSvg
+            Our{" "}
+            <span className="text-primary">
+              Creative
+              <AnimateSvg
                 path="M61.9499 126.019C129.419 134.323 205.111 131.946 269.179 107.397C287.878 100.232 312.661 88.4955 307.573 64.3267C301.574 35.835 261.103 20.5501 236.856 13.8731C190.969 1.23754 142.979 0.450446 96.0779 7.22801C75.3721 10.2202 54.4734 14.7152 35.0413 22.6512C24.1049 27.1176 1.84994 37.8503 3.04637 53.0054C3.93896 64.3117 19.7218 75.4778 28.068 80.8164C50.3829 95.0898 77.4888 103.502 102.805 110.596C157.283 125.862 212.697 134.798 268.687 142.263"
                 viewBox="0 0 110 20"
                 className="absolute bottom-12 left-16 w-16 h-3"
@@ -94,16 +100,14 @@ export default function TeamSection() {
                 strokeWidth={6}
                 animationDuration={1.5}
               />
-              </span>{" "}
-            <span className="relative inline-block">
-              Team
-             
-            </span>
+            </span>{" "}
+            <span className="relative inline-block">Team</span>
           </h2>
 
           <p className="mx-auto mt-1 max-w-2xl text-base leading-8 text-white/60 sm:text-lg">
             A small team with big energy — strategy, design, code, and motion
-            working together like a clean business machine.
+            working together like a clean business machine, the heart of Crown
+            Agency.
           </p>
         </div>
 
@@ -168,7 +172,7 @@ export default function TeamSection() {
                     <div className="relative h-[390px] w-full overflow-hidden">
                       <Image
                         src={member.image}
-                        alt={member.name}
+                        alt={`${member.name} - ${member.role} at Crown Agency`}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                         sizes="(max-width: 768px) 100vw, 33vw"
@@ -233,27 +237,6 @@ export default function TeamSection() {
               </SwiperSlide>
             ))}
           </Swiper>
-
-          {/* Controls */}
-          {/* <div className="mt-12 flex items-center justify-center gap-5">
-            <button
-              type="button"
-              className="team-swiper-prev flex h-12 w-12 items-center justify-center rounded-full! border border-white/10 bg-white/5 text-white backdrop-blur transition hover:scale-110 hover:border-white/25 hover:bg-white/10"
-              aria-label="Previous member"
-            >
-              <ArrowLeft className="h-5 w-5" />
-            </button>
-
-            <div className="team-swiper-pagination flex !w-auto items-center justify-center gap-2" />
-
-            <button
-              type="button"
-              className="team-swiper-next flex h-12 w-12 items-center justify-center rounded-full! border border-white/10 bg-white/5 text-white backdrop-blur transition hover:scale-110 hover:border-white/25 hover:bg-white/10"
-              aria-label="Next member"
-            >
-              <ArrowRight className="h-5 w-5" />
-            </button>
-          </div> */}
         </div>
         <div className="absolute inset-0 z-0 overflow-hidden">
           <Particles
@@ -266,7 +249,6 @@ export default function TeamSection() {
         </div>
       </div>
 
-      {/* Swiper Pagination Custom Style */}
       <style jsx global>{`
         .team-swiper-pagination .swiper-pagination-bullet {
           width: 9px;

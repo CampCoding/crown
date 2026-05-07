@@ -1,5 +1,4 @@
 import React, { Fragment, useState, useEffect } from "react";
-import Head from "next/head";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import VanillaTilt from "vanilla-tilt";
@@ -22,7 +21,10 @@ import dynamic from "next/dynamic";
 const SplashCursor = dynamic(() => import("../SplashCursor"), { ssr: false });
 import NetworkGrid from "./NetworkGrid";
 import FloatingSocials from "./FloatingSocials";
-const LightRays = dynamic(() => import("../containers/LightRays"), { ssr: false });
+import SEO from "../Seo"; // 👈 NEW: Default SEO fallback
+const LightRays = dynamic(() => import("../containers/LightRays"), {
+  ssr: false,
+});
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -41,7 +43,6 @@ const Layout = ({
   handleMouseLeaveTitle,
   video,
 }: LayoutProps) => {
-
   // tilt effect
   useEffect(() => {
     const tiltElements = document.querySelectorAll(".topy-tilt");
@@ -87,7 +88,9 @@ const Layout = ({
     const fadeWrapperRefs = document.querySelectorAll(".fade-wrapper");
 
     fadeWrapperRefs.forEach((fadeWrapperRef) => {
-      const fadeItems = fadeWrapperRef.querySelectorAll(".fade-top, .fade-left, .fade-right");
+      const fadeItems = fadeWrapperRef.querySelectorAll(
+        ".fade-top, .fade-left, .fade-right"
+      );
 
       fadeItems.forEach((element, index) => {
         const delay = index * 0.15;
@@ -98,7 +101,7 @@ const Layout = ({
         gsap.set(element, {
           opacity: 0,
           y: isTop ? 100 : 0,
-          x: isLeft ? -100 : (isRight ? 100 : 0),
+          x: isLeft ? -100 : isRight ? 100 : 0,
         });
 
         ScrollTrigger.create({
@@ -180,23 +183,100 @@ const Layout = ({
     });
   }, []);
 
+  // 🔥 Auto-generate SEO based on current route
+  const getDefaultSEOForRoute = () => {
+    const pathname = router.pathname;
+    const routeMap: Record<string, { title: string; description: string }> = {
+      "/": {
+        title: "Home",
+        description:
+          "Crown — A premier Marketing & Software Development Agency. We craft digital experiences, build powerful applications, and scale brands worldwide.",
+      },
+      "/about-us": {
+        title: "About Us",
+        description:
+          "Discover Crown's story, vision, and the team behind our cutting-edge marketing and software solutions.",
+      },
+      "/our-services": {
+        title: "Our Services",
+        description:
+          "Explore Crown's full range of services: UI/UX Design, Web & Mobile Development, SEO, Branding, Performance Marketing, and Content Creation.",
+      },
+      "/service-single": {
+        title: "Service Details",
+        description:
+          "Learn more about our specialized digital services and how Crown can help scale your brand.",
+      },
+      "/our-projects": {
+        title: "Our Projects",
+        description:
+          "Browse Crown's portfolio of successful projects across various industries — from startups to enterprises.",
+      },
+      "/portfolio": {
+        title: "Portfolio",
+        description:
+          "Explore Crown's award-winning portfolio of marketing campaigns and software development projects.",
+      },
+      "/project-single": {
+        title: "Project Details",
+        description:
+          "A deep dive into one of Crown's signature projects — case study, strategy, and results.",
+      },
+      "/blog": {
+        title: "Blog & News",
+        description:
+          "Stay updated with the latest insights from Crown on marketing trends, software innovations, and industry news.",
+      },
+      "/blog-single": {
+        title: "Blog Post",
+        description: "Read in-depth articles from Crown's team of experts.",
+      },
+      "/contact-us": {
+        title: "Contact Us",
+        description:
+          "Get in touch with Crown today. Let's talk about your next big project — marketing, branding, or software.",
+      },
+      "/our-story": {
+        title: "Our Story",
+        description:
+          "The journey behind Crown — how we became a trusted name in marketing and software development.",
+      },
+      "/our-teams": {
+        title: "Our Team",
+        description:
+          "Meet the talented professionals at Crown driving innovation across marketing and software.",
+      },
+      "/team-single": {
+        title: "Team Member",
+        description: "Get to know one of Crown's expert team members.",
+      },
+      "/faq": {
+        title: "FAQ",
+        description:
+          "Frequently asked questions about Crown's services, processes, and pricing.",
+      },
+      "/client-feedback": {
+        title: "Client Feedback",
+        description:
+          "Real testimonials from Crown's satisfied clients across the globe.",
+      },
+    };
+
+    return (
+      routeMap[pathname] || {
+        title: "Crown — Marketing & Software Agency",
+        description:
+          "Crown is a full-service marketing and software development agency. We build, brand, and scale.",
+      }
+    );
+  };
+
+  const defaultSEO = getDefaultSEOForRoute();
+
   return (
     <Fragment>
-      <Head>
-        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          rel="shortcut icon"
-          href="/images/favicon.png"
-          type="image/x-icon"
-        />
-        <title>Crown | Digital Agency Creative</title>
-        <meta name="keywords" content="creative, agency, portfolio" />
-        <meta
-          name="description"
-          content="Digital Agency Creative Portfolio Template"
-        />
-      </Head>
+      {/* 🌟 Default SEO fallback - Each page can override with its own <SEO /> */}
+      <SEO title={defaultSEO.title} description={defaultSEO.description} />
 
       <div className={combinedClassName}>
         {header === 1 && (
@@ -234,10 +314,10 @@ const Layout = ({
             setOpenNav={setOpenNav}
           />
         )}
-        
+
         <main>{children}</main>
 
-        <LightRays /> 
+        <LightRays />
         <NetworkGrid />
 
         {footer === 1 && <Footer />}
@@ -245,26 +325,21 @@ const Layout = ({
         {footer === 3 && <FooterThree />}
         {footer === 4 && <FooterFour />}
         {footer === 5 && <FooterFive />}
-        {/* {video ? <VideoModal /> : null} */}
+
         <ScrollProgressBtn />
         <SplashCursor
-        DENSITY_DISSIPATION={3.5}
-  VELOCITY_DISSIPATION={2}
-  PRESSURE={0.1}
-  CURL={3}
-  SPLAT_RADIUS={0.2}
-  SPLAT_FORCE={6000}
-  COLOR_UPDATE_SPEED={10}
-  SHADING
-  RAINBOW_MODE={false}
-  COLOR="#0072ed"
-        
+          DENSITY_DISSIPATION={3.5}
+          VELOCITY_DISSIPATION={2}
+          PRESSURE={0.1}
+          CURL={3}
+          SPLAT_RADIUS={0.2}
+          SPLAT_FORCE={6000}
+          COLOR_UPDATE_SPEED={10}
+          SHADING
+          RAINBOW_MODE={false}
+          COLOR="#0072ed"
         />
         <FloatingSocials />
-        {/* <CustomCursor
-          onTitleMouseEnter={handleMouseEnterTitle}
-          onTitleMouseLeave={handleMouseLeaveTitle}
-        /> */}
       </div>
     </Fragment>
   );
