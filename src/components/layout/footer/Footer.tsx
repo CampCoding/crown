@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "public/images/logo.png";
-import PixelSnow from "../../PixelSnow";
 import { COMPANY_INFO } from "@/lib/constants";
 
 const Footer = () => {
@@ -10,7 +9,7 @@ const Footer = () => {
 
   // WhatsApp link with pre-filled message
   const whatsappMessage = encodeURIComponent(
-    `Hello ${COMPANY_INFO.name}! I'm interested in your services.`
+    `Hello ${COMPANY_INFO.name} Agency! I'm interested in your services.`
   );
   const whatsappLink = `https://wa.me/${COMPANY_INFO.whatsapp}?text=${whatsappMessage}`;
 
@@ -32,44 +31,51 @@ const Footer = () => {
               <Link
                 href="/"
                 className="logo h-26 w-26"
-                aria-label="Crown - Home"
+                aria-label="Crown Agency - Home"
               >
                 <Image src={logo} alt="Crown Agency Logo" />
               </Link>
+
               <div className="footer__single-meta">
                 <Link
                   href={mapsLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="View location on Google Maps"
+                  aria-label="View Crown Agency location on Google Maps"
                 >
                   <i className="fa-sharp fa-solid fa-location-dot"></i>
                   {COMPANY_INFO.address.full}
                 </Link>
+
                 <Link
                   href={`tel:${COMPANY_INFO.phone}`}
-                  aria-label="Call Crown"
+                  aria-label="Call Crown Agency"
                 >
                   <i className="fa-sharp fa-solid fa-phone-volume"></i>
                   {COMPANY_INFO.phone}
                 </Link>
-                <Link
-                  href={`mailto:${COMPANY_INFO.email}`}
-                  aria-label="Email Crown"
-                >
-                  <i className="fa-sharp fa-solid fa-envelope"></i>
-                  {COMPANY_INFO.email}
-                </Link>
+
+                {COMPANY_INFO.email && (
+                  <Link
+                    href={`mailto:${COMPANY_INFO.email}`}
+                    aria-label="Email Crown Agency"
+                  >
+                    <i className="fa-sharp fa-solid fa-envelope"></i>
+                    {COMPANY_INFO.email}
+                  </Link>
+                )}
+
                 <Link
                   href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Chat with Crown on WhatsApp"
+                  aria-label="Chat with Crown Agency on WhatsApp"
                 >
                   <i className="fa-brands fa-whatsapp"></i>
                   Chat on WhatsApp
                 </Link>
               </div>
+
               <div className="footer__cta text-start">
                 <Link href="/contact-us" className="btn btn--secondary">
                   book a call now
@@ -96,9 +102,6 @@ const Footer = () => {
                     <Link href="/our-services">Services</Link>
                   </li>
                   <li>
-                    <Link href="/our-projects">Projects</Link>
-                  </li>
-                  <li>
                     <Link href="/blog">News & Blog</Link>
                   </li>
                   <li>
@@ -118,7 +121,8 @@ const Footer = () => {
               <div className="footer__single-content">
                 <p>
                   Stay updated with the latest in marketing trends, software
-                  innovations, and exclusive insights from {COMPANY_INFO.name}.
+                  innovations, and exclusive insights from {COMPANY_INFO.name}{" "}
+                  Agency.
                 </p>
                 <div className="footer__single-form">
                   <form action="#" method="post">
@@ -156,7 +160,7 @@ const Footer = () => {
                     <p>
                       Copyright &copy;
                       <span id="copyYear"> {currentYear} </span>
-                      <strong>{COMPANY_INFO.name}</strong> — All Rights
+                      <strong>{COMPANY_INFO.fullName}</strong> — All Rights
                       Reserved.
                     </p>
                   </div>
@@ -168,76 +172,83 @@ const Footer = () => {
                         href={COMPANY_INFO.social.facebook}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Crown on Facebook"
+                        aria-label="Crown Agency on Facebook"
                       >
                         <i className="fa-brands fa-facebook-f"></i>
                       </Link>
                     )}
+
                     {COMPANY_INFO.social.instagram && (
                       <Link
                         href={COMPANY_INFO.social.instagram}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Crown on Instagram"
+                        aria-label="Crown Agency on Instagram"
                       >
                         <i className="fa-brands fa-instagram"></i>
                       </Link>
                     )}
+
                     {COMPANY_INFO.social.linkedin && (
                       <Link
                         href={COMPANY_INFO.social.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Crown on LinkedIn"
+                        aria-label="Crown Agency on LinkedIn"
                       >
                         <i className="fa-brands fa-linkedin-in"></i>
                       </Link>
                     )}
+
                     {COMPANY_INFO.social.twitter && (
                       <Link
                         href={COMPANY_INFO.social.twitter}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Crown on Twitter"
+                        aria-label="Crown Agency on Twitter"
                       >
                         <i className="fa-brands fa-twitter"></i>
                       </Link>
                     )}
+
                     {COMPANY_INFO.social.behance && (
                       <Link
                         href={COMPANY_INFO.social.behance}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Crown on Behance"
+                        aria-label="Crown Agency on Behance"
                       >
                         <i className="fa-brands fa-behance"></i>
                       </Link>
                     )}
+
                     {COMPANY_INFO.social.youtube && (
                       <Link
                         href={COMPANY_INFO.social.youtube}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Crown on YouTube"
+                        aria-label="Crown Agency on YouTube"
                       >
                         <i className="fa-brands fa-youtube"></i>
                       </Link>
                     )}
+
                     {COMPANY_INFO.social.tiktok && (
                       <Link
                         href={COMPANY_INFO.social.tiktok}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Crown on TikTok"
+                        aria-label="Crown Agency on TikTok"
                       >
                         <i className="fa-brands fa-tiktok"></i>
                       </Link>
                     )}
+
                     <Link
                       href={whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Chat with Crown on WhatsApp"
+                      aria-label="Chat with Crown Agency on WhatsApp"
                     >
                       <i className="fa-brands fa-whatsapp"></i>
                     </Link>

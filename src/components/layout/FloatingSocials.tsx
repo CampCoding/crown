@@ -1,12 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import type { IconType } from "react-icons";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaWhatsapp,
-  FaLinkedinIn,
-} from "react-icons/fa6";
+import { FaFacebookF, FaWhatsapp } from "react-icons/fa6";
 import { COMPANY_INFO } from "@/lib/constants";
 
 type SocialItem = {
@@ -16,24 +11,13 @@ type SocialItem = {
   label: string;
 };
 
+// Build socials list — only show what's available
 const socials: SocialItem[] = [
   COMPANY_INFO.social.facebook && {
     icon: FaFacebookF,
     href: COMPANY_INFO.social.facebook,
     color: "#1877F2",
     label: "Facebook",
-  },
-  COMPANY_INFO.social.instagram && {
-    icon: FaInstagram,
-    href: COMPANY_INFO.social.instagram,
-    color: "#E4405F",
-    label: "Instagram",
-  },
-  COMPANY_INFO.social.linkedin && {
-    icon: FaLinkedinIn,
-    href: COMPANY_INFO.social.linkedin,
-    color: "#0A66C2",
-    label: "LinkedIn",
   },
   COMPANY_INFO.whatsapp && {
     icon: FaWhatsapp,
@@ -43,8 +27,9 @@ const socials: SocialItem[] = [
   },
 ].filter(Boolean) as SocialItem[];
 
+// WhatsApp message
 const whatsappMessage = encodeURIComponent(
-  `Hello ${COMPANY_INFO.name}! I'm interested in your services.`
+  `Hello ${COMPANY_INFO.name} Agency! I'm interested in your services.`
 );
 const whatsappLink = `https://wa.me/${COMPANY_INFO.whatsapp}?text=${whatsappMessage}`;
 
@@ -52,7 +37,7 @@ const FloatingSocials = () => {
   return (
     <>
       {/* ============================================ */}
-      {/* Desktop Dock (XL screens only) - Original   */}
+      {/* Desktop Dock (XL screens only)               */}
       {/* ============================================ */}
       <div className="fixed right-3 bottom-8 z-[999] hidden xl:flex flex-col items-center">
         {/* Top Line */}
@@ -120,24 +105,26 @@ const FloatingSocials = () => {
       {/* ============================================ */}
       {/* Mobile/Tablet WhatsApp Button (always visible below xl) */}
       {/* ============================================ */}
-      <Link
-        href={whatsappLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
-        className="group fixed bottom-6 left-5 z-[999] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(37,211,102,0.45)] transition-transform duration-300 hover:scale-110 xl:hidden!"
-      >
-        {/* Pulse Ring */}
-        <span className="absolute inset-0 animate-ping rounded-full border-2 border-[#25D366] opacity-60" />
+      {COMPANY_INFO.whatsapp && (
+        <Link
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat on WhatsApp"
+          className="group fixed bottom-6 left-5 z-[999] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(37,211,102,0.45)] transition-transform duration-300 hover:scale-110 xl:hidden!"
+        >
+          {/* Pulse Ring */}
+          <span className="absolute inset-0 animate-ping rounded-full border-2 border-[#25D366] opacity-60" />
 
-        {/* Icon */}
-        <FaWhatsapp className="relative z-10 text-[26px]" />
+          {/* Icon */}
+          <FaWhatsapp className="relative z-10 text-[26px]" />
 
-        {/* Tooltip (visible on tablet+) */}
-        <span className="pointer-events-none absolute right-[70px] top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full border border-white/10 bg-[#07141b]/95 px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-white opacity-0 shadow-[0_12px_35px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-opacity duration-300 group-hover:opacity-100 sm:block">
-          Chat with us
-        </span>
-      </Link>
+          {/* Tooltip (visible on tablet+) */}
+          <span className="pointer-events-none absolute right-[70px] top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full border border-white/10 bg-[#07141b]/95 px-4 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-white opacity-0 shadow-[0_12px_35px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-opacity duration-300 group-hover:opacity-100 sm:block">
+            Chat with us
+          </span>
+        </Link>
+      )}
     </>
   );
 };

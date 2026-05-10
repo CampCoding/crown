@@ -66,10 +66,11 @@ const HomeOneBanner = () => {
                 </h1>
                 <div className="banner__content-inner fade-top">
                   <p>
-                    Crown Agency is a modern marketing company built to help
-                    brands lead, not follow. We combine creativity, strategy,
-                    and data to create impactful campaigns that grow your
-                    presence and elevate your brand.
+                    Crown Agency is a modern marketing & software company built
+                    to help brands lead, not follow. We combine creativity,
+                    strategy, and technology to create impactful campaigns and
+                    digital products that grow your presence and elevate your
+                    brand.
                   </p>
                   <div className="cta section__content-cta">
                     <div className="single">
@@ -92,27 +93,43 @@ const HomeOneBanner = () => {
           className="banner-one-thumb d-none d-sm-block g-ban-one"
         />
         <Image src={star} alt="decorative star" className="star" />
+
+        {/* Left side - Phone & WhatsApp */}
         <div className="banner-left-text banner-social-text d-none d-md-flex">
-          <Link
-            href={`mailto:${COMPANY_INFO.email}`}
-            aria-label="Email Crown Agency"
-          >
-            mail : {COMPANY_INFO.email}
-          </Link>
           <Link
             href={`tel:${COMPANY_INFO.phone}`}
             aria-label="Call Crown Agency"
           >
             Call : {COMPANY_INFO.phone}
           </Link>
+          <Link
+            href={`https://wa.me/${COMPANY_INFO.whatsapp}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp Crown Agency"
+          >
+            WhatsApp : {COMPANY_INFO.phone}
+          </Link>
         </div>
+
+        {/* Right side - Social Links (only available ones) */}
         <div className="banner-right-text banner-social-text d-none d-md-flex">
+          {COMPANY_INFO.social.facebook && (
+            <Link
+              href={COMPANY_INFO.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Crown Agency on Facebook"
+            >
+              facebook
+            </Link>
+          )}
           {COMPANY_INFO.social.instagram && (
             <Link
               href={COMPANY_INFO.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Crown on Instagram"
+              aria-label="Crown Agency on Instagram"
             >
               instagram
             </Link>
@@ -122,22 +139,13 @@ const HomeOneBanner = () => {
               href={COMPANY_INFO.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Crown on LinkedIn"
+              aria-label="Crown Agency on LinkedIn"
             >
-              Linkedin
-            </Link>
-          )}
-          {COMPANY_INFO.social.facebook && (
-            <Link
-              href={COMPANY_INFO.social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Crown on Facebook"
-            >
-              facebook
+              linkedin
             </Link>
           )}
         </div>
+
         <button
           className="video-frame video-btn"
           onClick={() => setVideoActive(true)}

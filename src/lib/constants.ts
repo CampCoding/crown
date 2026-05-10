@@ -2,58 +2,56 @@
 
 export const COMPANY_INFO = {
   name: "Crown",
-  fullName: "Crown Marketing & Software Agency",
+  fullName: "Crown Agency",
   tagline: "Where Brands Become Royalty",
   description:
-    "Crown is a full-service marketing and software development agency founded in 2026. We craft digital experiences, build powerful web & mobile applications, and scale brands with data-driven marketing strategies.",
+    "Crown Agency is a marketing and software development company helping brands grow through strategy, design, content, and digital products.",
   shortDescription:
-    "Crown — Marketing & Software Agency. We build, brand, and scale.",
+    "Crown Agency — Marketing & Software Solutions for modern brands.",
   founded: 2026,
-  url: "https://crown-agency.com", // 🔧 PLACEHOLDER
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://crown-agency.com",
   logo: "/images/logo.png",
   ogImage: "/images/og-image.png",
-  email: "info@crown-agency.com", // 🔧 PLACEHOLDER
-  phone: "+201000000000", // 🔧 PLACEHOLDER
-  whatsapp: "201000000000", // 🔧 PLACEHOLDER (بدون +)
+
+  // ✅ Real Data
+  email: "", // Not available yet
+  phone: "+201000308057",
+  whatsapp: "201000308057",
+
   address: {
-    street: "Cairo Business District",
+    street: "Villa 1, Misr Lel-Tayaran St., Near City Centre Almaza, Suez Rd",
     city: "Cairo",
     country: "Egypt",
-    full: "Cairo Business District, Cairo, Egypt",
+    full: "Villa 1, Misr Lel-Tayaran St., Near City Centre Almaza, Suez Rd, Cairo, Egypt",
   },
+
   social: {
-    facebook: "https://facebook.com", // 🔧 PLACEHOLDER
-    instagram: "https://instagram.com", // 🔧 PLACEHOLDER
-    linkedin: "https://linkedin.com", // 🔧 PLACEHOLDER
-    whatsapp: "201000000000", // 🔧 PLACEHOLDER (رقم فقط)
-    // Optional - سيبهم فاضيين لو مش موجودين
+    facebook: "https://www.facebook.com/crownmarketingtec/",
+    instagram: "",
+    linkedin: "",
     twitter: "",
     behance: "",
     youtube: "",
     tiktok: "",
   },
-  // Analytics & Tracking (PLACEHOLDERS)
+
   analytics: {
-    googleAnalyticsId: "", // مثال: "G-XXXXXXXXXX"
-    googleTagManagerId: "", // مثال: "GTM-XXXXXXX"
-    metaPixelId: "", // مثال: "123456789012345"
+    googleAnalyticsId: "",
+    googleTagManagerId: "",
+    metaPixelId: "",
   },
+
   keywords: [
     "Crown Agency",
-    "Crown Marketing",
-    "Marketing Agency 2026",
-    "Software Development Agency",
+    "Marketing Agency Cairo",
+    "Software Development Egypt",
+    "Branding Agency",
     "Web Development",
     "Mobile App Development",
-    "UI UX Design",
     "SEO Services",
     "Digital Marketing",
-    "Branding Agency",
-    "Social Media Marketing",
-    "Performance Marketing",
     "Content Creation",
-    "Cairo Marketing Agency",
-    "Egypt Software Company",
+    "Cairo Agency",
   ],
 };
 
@@ -103,7 +101,7 @@ export const SERVICES_DATA = {
         features: [
           "iOS Native (Swift)",
           "Android Native (Kotlin)",
-          "React Native",
+          "React Native & Flutter",
           "App Store Optimization",
           "Push Notifications",
           "Offline-First Architecture",

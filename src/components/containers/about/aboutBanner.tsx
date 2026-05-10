@@ -105,15 +105,18 @@ const AboutUsBanner = () => {
         priority
       />
 
+      {/* Left side - Phone & WhatsApp */}
       <div className="banner-left-text banner-social-text d-none d-md-flex">
-        <Link
-          href={`mailto:${COMPANY_INFO.email}`}
-          aria-label="Email Crown Agency"
-        >
-          mail : {COMPANY_INFO.email}
-        </Link>
         <Link href={`tel:${COMPANY_INFO.phone}`} aria-label="Call Crown Agency">
           Call : {COMPANY_INFO.phone}
+        </Link>
+        <Link
+          href={`https://wa.me/${COMPANY_INFO.whatsapp}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp Crown Agency"
+        >
+          WhatsApp : {COMPANY_INFO.phone}
         </Link>
       </div>
 

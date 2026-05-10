@@ -113,19 +113,22 @@ ${formData.message}
 
               {/* Quick Contact Methods */}
               <div className="quick-contact d-flex flex-column gap-3 mb-5">
-                <Link
-                  href={`mailto:${COMPANY_INFO.email}`}
-                  className="quick-link"
-                  aria-label="Email Crown Agency"
-                >
-                  <div className="quick-icon">
-                    <Mail size={18} />
-                  </div>
-                  <div className="quick-text">
-                    <span className="label">Email Us</span>
-                    <span className="value">{COMPANY_INFO.email}</span>
-                  </div>
-                </Link>
+                {/* Email - only show if available */}
+                {COMPANY_INFO.email && (
+                  <Link
+                    href={`mailto:${COMPANY_INFO.email}`}
+                    className="quick-link"
+                    aria-label="Email Crown Agency"
+                  >
+                    <div className="quick-icon">
+                      <Mail size={18} />
+                    </div>
+                    <div className="quick-text">
+                      <span className="label">Email Us</span>
+                      <span className="value">{COMPANY_INFO.email}</span>
+                    </div>
+                  </Link>
+                )}
 
                 <Link
                   href={`tel:${COMPANY_INFO.phone}`}
@@ -205,7 +208,7 @@ ${formData.message}
           {/* Right Form Column */}
           <div className="col-12 col-lg-6">
             <div className="contact-form-card rounded-5 p-3 p-sm-4 p-md-5 border border-white-10 shadow-3xl">
-              <h3 className="text-white fw-700 mb-2 h4">Send us a message</h3>
+              <h2 className="text-white fw-700 mb-2 h4">Send us a message</h2>
               <p className="text-slate-400 small mb-4">
                 Fill in the form & we&apos;ll respond on WhatsApp instantly.
               </p>
@@ -523,10 +526,7 @@ ${formData.message}
           border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* ============================================ */
-        /* RESPONSIVE                                   */
-        /* ============================================ */
-
+        /* RESPONSIVE */
         @media (max-width: 991px) {
           .contact-premium-section {
             padding-top: 8rem !important;
