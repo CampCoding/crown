@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "public/images/logo.png";
+// import logo from "public/images/logo.png";
+import logo from 'public/images/Untitled-1-removebg-preview.png';
 import Offcanvas from "./Offcanvas";
 import { ArrowUpRight } from "lucide-react";
 
@@ -51,7 +52,7 @@ const Header = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
                         alt="Crown Agency Logo"
                         priority
                         width={120}
-                        height={30}
+                        height={40}
                       />
                     </Link>
                   </div>

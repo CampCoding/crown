@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { COMPANY_INFO } from "@/lib/constants";
 import one from "public/images/teams/one.png";
 import two from "public/images/teams/two.png";
 import three from "public/images/teams/three.png";
@@ -34,23 +35,23 @@ const TeamMain = () => {
                   <p>Senior engineer</p>
                   <div className="social-alt">
                     <Link
-                      href="https://www.facebook.com/"
+                      href={COMPANY_INFO.social.facebook}
                       target="_blank"
                       aria-label="share us on facebook"
                     >
                       <i className="fa-brands fa-facebook-f"></i>
                     </Link>
                     <Link
-                      href="https://www.twitter.com/"
+                      href={COMPANY_INFO.social.instagram}
                       target="_blank"
-                      aria-label="share us on twitter"
+                      aria-label="share us on instagram"
                     >
-                      <i className="fa-brands fa-twitter"></i>
+                      <i className="fa-brands fa-instagram"></i>
                     </Link>
                     <Link
-                      href="https://www.pinterest.com/"
+                      href={COMPANY_INFO.social.linkedin}
                       target="_blank"
-                      aria-label="share us on pinterest"
+                      aria-label="share us on linkedin"
                     >
                       <i className="fa-brands fa-linkedin-in"></i>
                     </Link>
@@ -80,23 +81,23 @@ const TeamMain = () => {
                   <p>Senior engineer</p>
                   <div className="social-alt">
                     <Link
-                      href="https://www.facebook.com/"
+                      href={COMPANY_INFO.social.facebook}
                       target="_blank"
                       aria-label="share us on facebook"
                     >
                       <i className="fa-brands fa-facebook-f"></i>
                     </Link>
                     <Link
-                      href="https://www.twitter.com/"
+                      href={COMPANY_INFO.social.instagram}
                       target="_blank"
-                      aria-label="share us on twitter"
+                      aria-label="share us on instagram"
                     >
-                      <i className="fa-brands fa-twitter"></i>
+                      <i className="fa-brands fa-instagram"></i>
                     </Link>
                     <Link
-                      href="https://www.pinterest.com/"
+                      href={COMPANY_INFO.social.linkedin}
                       target="_blank"
-                      aria-label="share us on pinterest"
+                      aria-label="share us on linkedin"
                     >
                       <i className="fa-brands fa-linkedin-in"></i>
                     </Link>
@@ -126,23 +127,23 @@ const TeamMain = () => {
                   <p>Senior engineer</p>
                   <div className="social-alt">
                     <Link
-                      href="https://www.facebook.com/"
+                      href={COMPANY_INFO.social.facebook}
                       target="_blank"
                       aria-label="share us on facebook"
                     >
                       <i className="fa-brands fa-facebook-f"></i>
                     </Link>
                     <Link
-                      href="https://www.twitter.com/"
+                      href={COMPANY_INFO.social.instagram}
                       target="_blank"
-                      aria-label="share us on twitter"
+                      aria-label="share us on instagram"
                     >
-                      <i className="fa-brands fa-twitter"></i>
+                      <i className="fa-brands fa-instagram"></i>
                     </Link>
                     <Link
-                      href="https://www.pinterest.com/"
+                      href={COMPANY_INFO.social.linkedin}
                       target="_blank"
-                      aria-label="share us on pinterest"
+                      aria-label="share us on linkedin"
                     >
                       <i className="fa-brands fa-linkedin-in"></i>
                     </Link>
@@ -172,23 +173,23 @@ const TeamMain = () => {
                   <p>Senior engineer</p>
                   <div className="social-alt">
                     <Link
-                      href="https://www.facebook.com/"
+                      href={COMPANY_INFO.social.facebook}
                       target="_blank"
                       aria-label="share us on facebook"
                     >
                       <i className="fa-brands fa-facebook-f"></i>
                     </Link>
                     <Link
-                      href="https://www.twitter.com/"
+                      href={COMPANY_INFO.social.instagram}
                       target="_blank"
-                      aria-label="share us on twitter"
+                      aria-label="share us on instagram"
                     >
-                      <i className="fa-brands fa-twitter"></i>
+                      <i className="fa-brands fa-instagram"></i>
                     </Link>
                     <Link
-                      href="https://www.pinterest.com/"
+                      href={COMPANY_INFO.social.linkedin}
                       target="_blank"
-                      aria-label="share us on pinterest"
+                      aria-label="share us on linkedin"
                     >
                       <i className="fa-brands fa-linkedin-in"></i>
                     </Link>
@@ -218,23 +219,23 @@ const TeamMain = () => {
                   <p>Senior engineer</p>
                   <div className="social-alt">
                     <Link
-                      href="https://www.facebook.com/"
+                      href={COMPANY_INFO.social.facebook}
                       target="_blank"
                       aria-label="share us on facebook"
                     >
                       <i className="fa-brands fa-facebook-f"></i>
                     </Link>
                     <Link
-                      href="https://www.twitter.com/"
+                      href={COMPANY_INFO.social.instagram}
                       target="_blank"
-                      aria-label="share us on twitter"
+                      aria-label="share us on instagram"
                     >
-                      <i className="fa-brands fa-twitter"></i>
+                      <i className="fa-brands fa-instagram"></i>
                     </Link>
                     <Link
-                      href="https://www.pinterest.com/"
+                      href={COMPANY_INFO.social.linkedin}
                       target="_blank"
-                      aria-label="share us on pinterest"
+                      aria-label="share us on linkedin"
                     >
                       <i className="fa-brands fa-linkedin-in"></i>
                     </Link>
@@ -264,23 +265,23 @@ const TeamMain = () => {
                   <p>Senior engineer</p>
                   <div className="social-alt">
                     <Link
-                      href="https://www.facebook.com/"
+                      href={COMPANY_INFO.social.facebook}
                       target="_blank"
                       aria-label="share us on facebook"
                     >
                       <i className="fa-brands fa-facebook-f"></i>
                     </Link>
                     <Link
-                      href="https://www.twitter.com/"
+                      href={COMPANY_INFO.social.instagram}
                       target="_blank"
-                      aria-label="share us on twitter"
+                      aria-label="share us on instagram"
                     >
-                      <i className="fa-brands fa-twitter"></i>
+                      <i className="fa-brands fa-instagram"></i>
                     </Link>
                     <Link
-                      href="https://www.pinterest.com/"
+                      href={COMPANY_INFO.social.linkedin}
                       target="_blank"
-                      aria-label="share us on pinterest"
+                      aria-label="share us on linkedin"
                     >
                       <i className="fa-brands fa-linkedin-in"></i>
                     </Link>

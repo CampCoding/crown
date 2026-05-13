@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import type { IconType } from "react-icons";
-import { FaFacebookF, FaWhatsapp } from "react-icons/fa6";
+import { FaFacebookF, FaWhatsapp, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 import { COMPANY_INFO } from "@/lib/constants";
 
 type SocialItem = {
@@ -19,12 +19,24 @@ const socials: SocialItem[] = [
     color: "#1877F2",
     label: "Facebook",
   },
-  COMPANY_INFO.whatsapp && {
-    icon: FaWhatsapp,
-    href: `https://wa.me/${COMPANY_INFO.whatsapp}`,
-    color: "#25D366",
-    label: "WhatsApp",
+  COMPANY_INFO.social.instagram && {
+    icon: FaInstagram,
+    href: COMPANY_INFO.social.instagram,
+    color: "#E4405F",
+    label: "Instagram",
   },
+  COMPANY_INFO.social.linkedin && {
+    icon: FaLinkedinIn,
+    href: COMPANY_INFO.social.linkedin,
+    color: "#0A66C2",
+    label: "LinkedIn",
+  },
+  // COMPANY_INFO.whatsapp && {
+  //   icon: FaWhatsapp,
+  //   href: `https://wa.me/${COMPANY_INFO.whatsapp}`,
+  //   color: "#25D366",
+  //   label: "WhatsApp",
+  // },
 ].filter(Boolean) as SocialItem[];
 
 // WhatsApp message

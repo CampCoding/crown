@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { COMPANY_INFO } from "@/lib/constants";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import one from "public/images/teams/one.png";
@@ -79,23 +80,23 @@ const TeamDetailsMain = () => {
               <Image src={one} alt="Image" />
               <div className="social-alt">
                 <Link
-                  href="https://www.facebook.com/"
+                  href={COMPANY_INFO.social.facebook}
                   target="_blank"
                   aria-label="share us on facebook"
                 >
                   <i className="fa-brands fa-facebook-f"></i>
                 </Link>
                 <Link
-                  href="https://www.twitter.com/"
+                  href={COMPANY_INFO.social.instagram}
                   target="_blank"
-                  aria-label="share us on twitter"
+                  aria-label="share us on instagram"
                 >
-                  <i className="fa-brands fa-twitter"></i>
+                  <i className="fa-brands fa-instagram"></i>
                 </Link>
                 <Link
-                  href="https://www.pinterest.com/"
+                  href={COMPANY_INFO.social.linkedin}
                   target="_blank"
-                  aria-label="share us on pinterest"
+                  aria-label="share us on linkedin"
                 >
                   <i className="fa-brands fa-linkedin-in"></i>
                 </Link>

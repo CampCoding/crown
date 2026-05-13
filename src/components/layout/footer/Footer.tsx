@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "public/images/logo.png";
+import logo from "public/images/Untitled-1-removebg-preview.png";
 import { COMPANY_INFO } from "@/lib/constants";
 
 const Footer = () => {
@@ -244,14 +244,14 @@ const Footer = () => {
                       </Link>
                     )}
 
-                    <Link
+                    {/* <Link
                       href={whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Chat with Crown Agency on WhatsApp"
                     >
                       <i className="fa-brands fa-whatsapp"></i>
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>

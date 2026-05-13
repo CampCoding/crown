@@ -134,14 +134,14 @@ const HomeOffer = () => {
                       {service.id}
                     </span>
                     <h2 className="mb-0">
-                      <Link
-                        href={`/service-single?service=${service.slug}`}
+                      <div
+                        // href={`/service-single?service=${service.slug}`}
                         className="text-white! group-hover:text-primary! transition-all duration-300"
                         data-cursor="view"
                       >
                         {service.title}
                         <i className="fa-sharp fa-solid fa-arrow-up-right opacity-0 group-hover:opacity-100 group-hover:translate-x-2 group-hover:-translate-y-2 transition-all duration-300"></i>
-                      </Link>
+                      </div>
                     </h2>
                   </div>
                   <div className="offer-thumb-hover d-none d-md-block pointer-events-none z-50">

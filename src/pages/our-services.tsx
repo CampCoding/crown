@@ -88,7 +88,7 @@ const OurServices = () => {
             "@type": "Service",
             name: "UI/UX Design",
             description:
-              "Human-centered interface design that converts visitors into customers",
+              "Crafting intuitive and inspiring digital experiences that balance flawless usability with modern aesthetics.",
           },
         },
         {
@@ -97,79 +97,52 @@ const OurServices = () => {
             "@type": "Service",
             name: "Web Development",
             description:
-              "Modern, scalable web applications built with Next.js, React, and cutting-edge tech",
+              "Engineering high-performance, visually stunning websites designed to convert visitors into loyal customers.",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Mobile App Development",
+            name: "Mobile Application",
             description:
-              "Native iOS, Android and cross-platform apps with React Native ",
+              "Developing smart, intuitive mobile applications that deliver a seamless user experience across all platforms.",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "SEO Optimization",
+            name: "SEO & JEO",
             description:
-              "Technical SEO, keyword strategy, and link building to rank higher",
+              "Securing your brand’s dominance across traditional search engines and AI-driven generative platforms.",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Social Media Marketing",
+            name: "Social Media Management",
             description:
-              "Build communities that drive real business growth across platforms",
+              "Crafting a premier digital presence through strategic storytelling and impactful engagement.",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Performance Marketing",
+            name: "Performance Marketing & Ads",
             description:
-              "Data-driven Meta, Google, and TikTok ad campaigns with measurable ROI",
+              "Data-driven advertising strategies designed to maximize your ROI and accelerate business scaling.",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Branding & Identity",
+            name: "Media Production & video editing",
             description:
-              "Build a brand worthy of a Crown — strategy, identity, and guidelines",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Content Creation",
-            description:
-              "Photography, videography, reels, copywriting, and motion graphics",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Media Production",
-            description:
-              "Cinematic-grade commercial shoots, product photography, and post-production",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Growth Strategy",
-            description:
-              "Market research, business development, and sales funnel optimization",
+              "Blending cinematic artistry with AI technology to create future-ready visual experiences.",
           },
         },
       ],
@@ -180,20 +153,17 @@ const OurServices = () => {
     <Layout header={1} footer={1} video={0}>
       <SEO
         title="Our Services — Marketing & Software Solutions"
-        description="Crown delivers premium digital services in 2026: UI/UX Design, Web & Mobile Development, SEO, Branding, Performance Marketing, Social Media, Content Creation & Growth Strategy. Scale your brand with the Crown."
+        description="Crown delivers premium digital services in 2026: UI/UX Design, Web Development, Mobile Application, SEO & JEO, Social Media Management, Performance Marketing & Ads, and Media Production."
         keywords={[
           "Crown Services",
           "Marketing Services 2026",
           "Web Development Agency",
           "Mobile App Development Egypt",
-          "SEO Services",
+          "SEO & JEO Services",
           "UI UX Agency Cairo",
-          "Branding Services",
-          "Digital Marketing 2026",
-          "Performance Marketing",
-          "Social Media Marketing Agency",
-          "Content Creation",
-          "Growth Strategy",
+          "Social Media Management",
+          "Performance Marketing & Ads",
+          "Media Production & Video Editing",
         ]}
         schema={servicesSchema}
       />

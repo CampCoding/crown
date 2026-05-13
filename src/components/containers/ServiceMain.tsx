@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -70,109 +70,124 @@ const ServiceMain = () => {
     {
       id: "01",
       title: "UI/UX Design",
-      subtitle: "Human-centered interfaces that convert.",
+      subtitle: "Crafting intuitive and inspiring digital experiences that balance flawless usability with modern aesthetics.",
       icon: "Palette",
       color: "#0072ed",
-      items: ["User Research", "Prototyping", "Design Systems", "Mobile-First"],
+      items: [
+        "User Research & Analysis",
+        "Wireframing & Information Architecture",
+        "Interactive Visual Design",
+        "Prototyping & User Testing",
+      ],
       slug: "ui-ux-design",
+      category: "Programming",
     },
     {
       id: "02",
       title: "Web Development",
-      subtitle: "Lightning-fast, scalable web apps.",
+      subtitle: "Engineering high-performance, visually stunning websites designed to convert visitors into loyal customers.",
       icon: "Code2",
       color: "#6366f1",
-      items: ["Next.js & React", "E-commerce", "Custom CMS", "API Integration"],
+      items: [
+        "Corporate Website Development",
+        "E-commerce Solutions",
+        "Landing Page Optimization",
+        "CMS Integration & Web Security",
+        "Customizing any Website"
+      ],
       slug: "web-development",
+      category: "Programming",
     },
     {
       id: "03",
-      title: "Mobile Development",
-      subtitle: "Native & cross-platform apps for iOS / Android.",
+      title: "Mobile Application",
+      subtitle: "Developing smart, intuitive mobile applications that deliver a seamless user experience across all platforms.",
       icon: "Smartphone",
       color: "#ec4899",
-      items: ["iOS Native", "Android Native", "React Native"],
-      slug: "mobile-development",
+      items: [
+        "iOS & Android Development",
+        "UI/UX Design & Prototyping",
+        "Cross-platform Solutions",
+        "Maintenance & App Updates",
+      ],
+      slug: "mobile-application",
+      category: "Programming",
     },
     {
       id: "04",
-      title: "SEO Optimization",
-      subtitle: "Rank higher, attract better, convert more.",
+      title: "SEO & JEO",
+      subtitle: "Securing your brand’s dominance across traditional search engines and AI-driven generative platforms.",
       icon: "Search",
       color: "#10b981",
       items: [
-        "Technical SEO",
-        "Keyword Strategy",
-        "Link Building",
-        "Local SEO",
+        "Search Engine Optimization (SEO)",
+        "Generative Engine Optimization (JEO)",
+        "Advanced Keyword Strategy",
+        "Authority Building & Brand Visibility",
       ],
-      slug: "seo-optimization",
+      slug: "seo-jeo",
+      category: "Marketing",
     },
     {
       id: "05",
-      title: "Social Media Marketing",
-      subtitle: "Build communities that drive growth.",
+      title: "Social Media Management",
+      subtitle: "Crafting a premier digital presence through strategic storytelling and impactful engagement.",
       icon: "Share2",
       color: "#f97316",
-      items: ["Content Calendar", "Community Mgmt", "Influencers", "Analytics"],
-      slug: "social-media-marketing",
+      items: [
+        "Strategic Roadmapping",
+        "Creative Content Creation",
+        "Community Management",
+        "Performance Analytics",
+      ],
+      slug: "social-media-management",
+      category: "Marketing",
     },
     {
       id: "06",
-      title: "Performance Marketing",
-      subtitle: "Data-driven ads with real ROI.",
+      title: "Performance Marketing & Ads",
+      subtitle: "Data-driven advertising strategies designed to maximize your ROI and accelerate business scaling.",
       icon: "TrendingUp",
       color: "#eab308",
-      items: ["Meta Ads", "Google Ads", "TikTok Ads", "A/B Testing"],
-      slug: "performance-marketing",
+      items: [
+        "Social Media Ads (Meta, TikTok, Snapchat)",
+        "Search Engine Marketing (Google Ads)",
+        "Precision Retargeting",
+        "Conversion Rate Optimization (CRO)",
+      ],
+      slug: "performance-marketing-ads",
+      category: "Marketing",
     },
     {
       id: "07",
-      title: "Branding & Identity",
-      subtitle: "Build a brand worthy of a Crown.",
-      icon: "Crown",
-      color: "#8b5cf6",
-      items: ["Brand Strategy", "Logo & Identity", "Guidelines", "Voice"],
-      slug: "branding-identity",
-    },
-    {
-      id: "08",
-      title: "Content Creation",
-      subtitle: "Stories that captivate and convert.",
-      icon: "Sparkles",
+      title: "Media Production & video editing",
+      subtitle: "Blending cinematic artistry with AI technology to create future-ready visual experiences.",
+      icon: "Camera",
       color: "#06b6d4",
       items: [
-        "Reels & Videos",
-        "Photography",
-        "Copywriting",
-        "Motion Graphics",
+        "Cinematic Videography & Photography",
+        "Motion Graphics & 3D Animation",
+        "AI-Powered Content Production",
+        "Advanced Post-Production & VFX",
       ],
-      slug: "content-creation",
-    },
-    {
-      id: "09",
-      title: "Media Production",
-      subtitle: "Cinematic-grade content production.",
-      icon: "Camera",
-      color: "#22d3ee",
-      items: [
-        "Commercial Shoots",
-        "Product Photo",
-        "Studio Setup",
-        "Post-Production",
-      ],
-      slug: "media-production",
-    },
-    {
-      id: "10",
-      title: "Growth Strategy",
-      subtitle: "Scale with clarity, not chaos.",
-      icon: "BarChart3",
-      color: "#22c55e",
-      items: ["Market Research", "Business Dev", "Sales Funnel", "CRM"],
-      slug: "growth-strategy",
+      slug: "media-production-video-editing",
+      category: "Marketing",
     },
   ];
+
+  const categories = ["All", "Marketing", "Programming"];
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredServices =
+    activeCategory === "All"
+      ? services
+      : services.filter((s) => s.category === activeCategory);
+
+  const categoryColors: Record<string, string> = {
+    Marketing: "#f97316",
+    Programming: "#6366f1",
+    All: "#0072ed",
+  };
 
   return (
     <section
@@ -186,6 +201,32 @@ const ServiceMain = () => {
       className="service-section bg-(--black) py-5"
     >
       <div className="container">
+        {/* Category Filter Badges */}
+        <div className="filter-container d-flex justify-content-center gap-3 mb-5">
+          {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`category-filter-btn ${
+                  activeCategory === cat ? "active" : ""
+                }`}
+                style={
+                  {
+                    "--cat-color": categoryColors[cat],
+                  } as React.CSSProperties
+                }
+              >
+              {cat === "All" && <Sparkles size={16} className="me-2" />}
+              {cat}
+              <span className="count">
+                {cat === "All"
+                  ? services.length
+                  : services.filter((s) => s.category === cat).length}
+              </span>
+            </button>
+          ))}
+        </div>
+
         <div className="service-v4__slider-w position-relative">
           <Swiper
             slidesPerView={1}
@@ -207,8 +248,9 @@ const ServiceMain = () => {
               1200: { slidesPerView: 4, spaceBetween: 24 },
             }}
             className="service-swiper pb-5"
+            key={activeCategory} // Force re-render on filter change for Swiper stability
           >
-            {services.map((service, index) => (
+            {filteredServices.map((service, index) => (
               <SwiperSlide key={index}>
                 <div
                   className="service-v4-card"
@@ -223,9 +265,16 @@ const ServiceMain = () => {
                       <div className="card-header-area">
                         <div className="icon-box">{iconMap[service.icon]}</div>
 
-                        <div className="mini-badge">
+                        <div
+                          className="mini-badge"
+                          style={
+                            {
+                              "--cat-color": categoryColors[service.category],
+                            } as React.CSSProperties
+                          }
+                        >
                           <span></span>
-                          Service
+                          {service.category}
                         </div>
                       </div>
 
@@ -241,15 +290,15 @@ const ServiceMain = () => {
                       </div>
                     </div>
 
-                    <div
+                    {/* <div
                       // href={`/service-single?service=${service.slug}`}
-                      className="action-link"
+                      className="flex gap-2 p-2 rounded-full items-center border border-gray-200 justify-between"
                     >
                       <span>Explore Service</span>
                       <div className="arrow-box">
                         <ArrowRight size={16} />
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </SwiperSlide>
@@ -455,7 +504,7 @@ const ServiceMain = () => {
           border-radius: 999px;
           color: rgba(255, 255, 255, 0.75);
           background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          border: 1px solid var(--cat-color, rgba(255, 255, 255, 0.08));
           font-size: 0.72rem;
           font-weight: 700;
           letter-spacing: 0.8px;
@@ -466,8 +515,8 @@ const ServiceMain = () => {
           width: 7px;
           height: 7px;
           border-radius: 50%;
-          background: var(--accent);
-          box-shadow: 0 0 14px var(--accent);
+          background: var(--cat-color, #fff);
+          box-shadow: 0 0 14px var(--cat-color, rgba(255, 255, 255, 0.5));
         }
 
         .card-content {
@@ -585,6 +634,60 @@ const ServiceMain = () => {
           color: black;
           border-color: white;
           transform: translateY(-3px);
+        }
+
+        /* Category Filter Styles */
+        .filter-container {
+          position: relative;
+          z-index: 10;
+        }
+
+        .category-filter-btn {
+          display: flex;
+          align-items: center;
+          padding: 0.8rem 1.4rem;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 0.85rem;
+          font-weight: 700;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          cursor: pointer;
+          backdrop-filter: blur(8px);
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        .category-filter-btn:hover {
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(255, 255, 255, 0.2);
+          color: #fff;
+          transform: translateY(-3px);
+        }
+
+        .category-filter-btn.active {
+          background: var(--cat-color);
+          color: #fff;
+          border-color: var(--cat-color);
+          box-shadow: 0 10px 25px -10px var(--cat-color);
+        }
+
+        .category-filter-btn .count {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.1);
+          font-size: 0.65rem;
+          margin-left: 10px;
+          transition: all 0.3s ease;
+        }
+
+        .category-filter-btn.active .count {
+          background: rgba(0, 0, 0, 0.1);
         }
 
         /* ============================ */

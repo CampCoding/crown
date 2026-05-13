@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { COMPANY_INFO } from "@/lib/constants";
 import logo from "public/images/logo.png";
 import gsap from "gsap";
 import chroma from "chroma-js";
@@ -117,18 +118,16 @@ const FooterFive = () => {
                 </Link>
               </div>
               <div className="paragraph">
-                <p>
-                  Crown is your dedicated partner in digital transformation. We specialize in creative shooting, content strategy, and business development to help your brand stand out.
-                </p>
+                <p>{COMPANY_INFO.description}</p>
               </div>
               <div className="section__content-cta">
                 <h2>
                   <Link
-                    href="mailto:info@crown.com"
+                    href={`mailto:${COMPANY_INFO.email || "info@crown-agency.com"}`}
                     className="folks-text animated-text"
                     ref={animatedTextRef}
                   >
-                    info@crown.com
+                    {COMPANY_INFO.email || "info@crown-agency.com"}
                     {animatedTextContent.split("").map((char, index) => (
                       <span
                         aria-hidden="true"
@@ -146,43 +145,43 @@ const FooterFive = () => {
           <div className="col-12 col-lg-7 col-xl-7 offset-xl-1 col-xxl-5 offset-xxl-3">
             <div className="footer-two__right">
               <div className="social justify-content-start justify-content-lg-start">
-                <Link href="https://www.facebook.com/" target="_blank">
-                  <i className="fa-brands fa-facebook-f"></i>
-                  <span>Facebook</span>
-                </Link>
-                <Link href="https://www.twitter.com/" target="_blank">
-                  <i className="fa-brands fa-twitter"></i>
-                  <span>Twitter</span>
-                </Link>
-                <Link href="https://www.pinterest.com/" target="_blank">
-                  <i className="fa-brands fa-linkedin-in"></i>
-                  <span>Linkedin</span>
-                </Link>
-                <Link href="https://www.instagram.com/" target="_blank">
-                  <i className="fa-brands fa-instagram"></i>
-                  <span>Instagram</span>
-                </Link>
-                <Link href="https://www.dribble.com/" target="_blank">
-                  <i className="fa-light fa-basketball"></i>
-                  <span>Dribble</span>
-                </Link>
+                {COMPANY_INFO.social.facebook && (
+                  <Link href={COMPANY_INFO.social.facebook} target="_blank">
+                    <i className="fa-brands fa-facebook-f"></i>
+                    <span>Facebook</span>
+                  </Link>
+                )}
+                {COMPANY_INFO.social.instagram && (
+                  <Link href={COMPANY_INFO.social.instagram} target="_blank">
+                    <i className="fa-brands fa-instagram"></i>
+                    <span>Instagram</span>
+                  </Link>
+                )}
+                {COMPANY_INFO.social.linkedin && (
+                  <Link href={COMPANY_INFO.social.linkedin} target="_blank">
+                    <i className="fa-brands fa-linkedin-in"></i>
+                    <span>Linkedin</span>
+                  </Link>
+                )}
               </div>
               <div className="footer__single-meta section__content-cta">
                 <Link
-                  href="https://www.google.com/maps/d/viewer?mid=1UZ57Drfs3SGrTgh6mrYjQktu6uY&hl=en_US&ll=18.672105000000013%2C105.68673800000003&z=17"
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(COMPANY_INFO.address.full)}`}
                   target="_blank"
                 >
                   <i className="fa-sharp fa-solid fa-location-dot"></i>
-                  901 N Pitt Str., Suite 170 Alexandria, USA
+                  {COMPANY_INFO.address.full}
                 </Link>
-                <Link href="tel:406-555-0120">
+                <Link href={`tel:${COMPANY_INFO.phone}`}>
                   <i className="fa-sharp fa-solid fa-phone-volume"></i>
-                  (406) 555-0120
+                  {COMPANY_INFO.phone}
                 </Link>
-                <Link href="mailto:info@xpovio.com">
-                  <i className="fa-sharp fa-solid fa-envelope"></i>
-                  info@xpovio.com
-                </Link>
+                {COMPANY_INFO.email && (
+                  <Link href={`mailto:${COMPANY_INFO.email}`}>
+                    <i className="fa-sharp fa-solid fa-envelope"></i>
+                    {COMPANY_INFO.email}
+                  </Link>
+                )}
               </div>
             </div>
           </div>

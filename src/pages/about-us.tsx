@@ -66,7 +66,7 @@ const AboutUs = () => {
       {/* <HomeTwoModal /> */}
       <AboutUsBanner />
       <Agency />
-      <TeamMembers />
+      {/* <TeamMembers /> */}
       <HomeTestimonial />
       <AboutSponsor />
       {/* <AboutCta /> */}

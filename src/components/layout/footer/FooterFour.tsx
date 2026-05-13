@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { COMPANY_INFO } from "@/lib/constants";
 import { useRouter } from "next/router";
 import logo from "public/images/logo.png";
 import logoLight from "public/images/logo-light.png";
@@ -48,27 +49,33 @@ const FooterFour = () => {
         <div className="row align-items-center copy-t gaper section__content-cta">
           <div className="col-12 col-lg-6">
             <ul className="justify-content-center justify-content-lg-start">
-              <li>
-                <Link href="https://www.linkedin.com/" target="_blank">
-                  Linkedin
-                </Link>
-              </li>
-              <li>
-                <Link href="https://www.twitter.com/" target="_blank">
-                  Twitter
-                </Link>
-              </li>
-              <li>
-                <Link href="https://www.facebook.com/" target="_blank">
-                  Facebook
-                </Link>
-              </li>
+              {COMPANY_INFO.social.linkedin && (
+                <li>
+                  <Link href={COMPANY_INFO.social.linkedin} target="_blank">
+                    Linkedin
+                  </Link>
+                </li>
+              )}
+              {COMPANY_INFO.social.instagram && (
+                <li>
+                  <Link href={COMPANY_INFO.social.instagram} target="_blank">
+                    Instagram
+                  </Link>
+                </li>
+              )}
+              {COMPANY_INFO.social.facebook && (
+                <li>
+                  <Link href={COMPANY_INFO.social.facebook} target="_blank">
+                    Facebook
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
           <div className="col-12 col-lg-6">
             <div className="text-center text-lg-end">
-              <Link href="mailto:hello@website.com" className="text-capitalize">
-                hello@website.com
+              <Link href={`mailto:${COMPANY_INFO.email || "hello@crown-agency.com"}`} className="text-capitalize">
+                {COMPANY_INFO.email || "hello@crown-agency.com"}
               </Link>
             </div>
           </div>
@@ -84,12 +91,11 @@ const FooterFour = () => {
                     <div className="footer__copyright-text text-center text-lg-start">
                       <p>
                         Copyright &copy;{" "}
-                        <span id="copyYear">{currentYear}</span> Xpovio by{" "}
+                        <span id="copyYear">{currentYear}</span> {COMPANY_INFO.name} by{" "}
                         <Link
-                          href="https://themeforest.net/user/UltraDevs"
-                          target="_blank"
+                          href="/"
                         >
-                          UltraDevs{" "}
+                          Crown Agency{" "}
                         </Link>
                         . All Rights Reserved
                       </p>
