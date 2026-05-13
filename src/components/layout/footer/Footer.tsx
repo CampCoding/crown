@@ -47,13 +47,13 @@ const Footer = () => {
                   {COMPANY_INFO.address.full}
                 </Link>
 
-                <Link
+                {/* <Link
                   href={`tel:${COMPANY_INFO.phone}`}
                   aria-label="Call Crown Agency"
                 >
                   <i className="fa-sharp fa-solid fa-phone-volume"></i>
                   {COMPANY_INFO.phone}
-                </Link>
+                </Link> */}
 
                 {COMPANY_INFO.email && (
                   <Link
@@ -65,7 +65,7 @@ const Footer = () => {
                   </Link>
                 )}
 
-                <Link
+                {/* <Link
                   href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -73,7 +73,7 @@ const Footer = () => {
                 >
                   <i className="fa-brands fa-whatsapp"></i>
                   Chat on WhatsApp
-                </Link>
+                </Link> */}
               </div>
 
               <div className="footer__cta text-start">
