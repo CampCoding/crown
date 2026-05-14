@@ -102,7 +102,7 @@ const Home = () => {
       <Agency />
       {/* <PortfolioText /> */}
       <HomeOffer />
-      <HomeTestimonial />
+      {/* <HomeTestimonial /> */}
       <HomeBlog />
       <HomeSponsor />
       {/* <NextPage /> */}

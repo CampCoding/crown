@@ -222,7 +222,7 @@ const OurServices = () => {
             </div>
           </section>
 
-          <HomeTestimonialThree />
+          {/* <HomeTestimonialThree /> */}
         </div>
       </div>
 

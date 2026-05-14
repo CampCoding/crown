@@ -67,7 +67,7 @@ const AboutUs = () => {
       <AboutUsBanner />
       <Agency />
       {/* <TeamMembers /> */}
-      <HomeTestimonial />
+      {/* <HomeTestimonial /> */}
       <AboutSponsor />
       {/* <AboutCta /> */}
     </Layout>

@@ -27,7 +27,7 @@ export const COMPANY_INFO = {
 
   social: {
     facebook: "https://www.facebook.com/crowndigitalsolution1",
-    instagram: "https://www.instagram.com/crown_digital_solutions/?hl=ar",
+    instagram: "https://www.instagram.com/crown_digital_agency?igsh=MTUyam53MTN0aG5yZw==",
     linkedin: "https://www.linkedin.com/in/crown-digital-solution-582b80403/",
     twitter: "",
     behance: "",

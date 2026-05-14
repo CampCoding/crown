@@ -227,7 +227,7 @@ const BlogDetail = () => {
             </div>
 
             {/* SHARE */}
-            <div>
+            {/* <div>
               <SidebarLabel label="Share Article" />
               <div className="flex gap-3 sm:gap-4 mt-5 sm:mt-6!">
                 <ShareBtn icon={<FaLinkedin size={18} />} label="LinkedIn" />
@@ -235,7 +235,7 @@ const BlogDetail = () => {
                 <ShareBtn icon={<FaFacebook size={18} />} label="Facebook" />
                 <ShareBtn icon={<LinkIcon size={18} />} label="Copy Link" />
               </div>
-            </div>
+            </div> */}
 
             {/* RELATED */}
             <div>
