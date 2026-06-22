@@ -1,35 +1,35 @@
-// import React from "react";
 
-// type videoProps = {
-//   embedId: string;
-// };
-
-// const YoutubeEmbed = ({ embedId }: videoProps) => {
-//   return (
-//     <>
-//       <iframe
-//         width="200"
-//         height="100"
-//         src={`https://www.youtube.com/embed/${embedId}`}
-//         data-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-//         allowFullScreen
-//         title="Embedded youtube"
-//         className="video"
-//       />
-//     </>
-//   );
-// };
-
-// export default YoutubeEmbed;
-
-
-import React from "react";
+type videoProps = {
+  embedId: string;
+};
 
 type VideoProps = {
   src: string;
 };
 
-const LocalVideoEmbed = ({ src }: VideoProps) => {
+
+const YoutubeEmbed = ({ embedId }: videoProps) => {
+  return (
+    <>
+      <iframe
+        width="200"
+        height="100"
+        src={`https://www.youtube.com/embed/${embedId}`}
+        data-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        title="Embedded youtube"
+        className="video"
+      />
+    </>
+  );
+};
+
+export default YoutubeEmbed;
+
+
+
+
+export const LocalVideoEmbed = ({ src }: VideoProps) => {
   return (
     <div className="video-wrapper w-full h-full flex items-center justify-center">
       <video
@@ -47,4 +47,4 @@ const LocalVideoEmbed = ({ src }: VideoProps) => {
   );
 };
 
-export default LocalVideoEmbed;
+;
